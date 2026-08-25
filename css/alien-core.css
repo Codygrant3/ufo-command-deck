@@ -1,0 +1,1020 @@
+/* ============================================
+   UFO COMMAND DECK - ALIEN CORE DESIGN SYSTEM
+   ============================================ */
+
+:root {
+    /* Alien Void Colors */
+    --alien-void: #020408;
+    --alien-deep: #040810;
+    --alien-panel: rgba(8, 18, 28, 0.92);
+    --alien-panel-solid: #081218;
+
+    /* Neon Glyph Palette */
+    --glyph-primary: #00ffd4;
+    --glyph-secondary: #ff3366;
+    --glyph-tertiary: #8855ff;
+    --glyph-gold: #ffd700;
+    --glyph-orange: #ff8844;
+
+    /* Bioluminescence */
+    --bio-glow: #44ff88;
+    --bio-pulse: #00ffaa;
+    --bio-dim: rgba(0, 255, 170, 0.3);
+
+    /* Text */
+    --text-bright: #ffffff;
+    --text-primary: #e0e8f0;
+    --text-dim: #667788;
+    --text-glyph: #00ffd4;
+
+    /* Effects */
+    --scan-line: rgba(0, 255, 212, 0.08);
+    --glow-primary: 0 0 30px rgba(0, 255, 212, 0.5), 0 0 60px rgba(0, 255, 212, 0.2);
+    --glow-danger: 0 0 30px rgba(255, 51, 102, 0.5);
+    --glow-gold: 0 0 20px rgba(255, 215, 0, 0.4);
+
+    /* Spacing */
+    --nav-height: 70px;
+    --panel-radius: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    background: var(--alien-void);
+    color: var(--text-primary);
+    cursor: crosshair;
+}
+
+/* ============================================
+   ALIEN GLYPHS & DECORATIONS
+   ============================================ */
+
+@font-face {
+    font-family: 'Alien Glyphs';
+    src: local('Wingdings');
+}
+
+.alien-glyph {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--glyph-primary);
+    text-shadow: var(--glow-primary);
+    letter-spacing: 4px;
+}
+
+.glyph-border {
+    position: relative;
+}
+
+.glyph-border::before,
+.glyph-border::after {
+    content: '◈◇◈';
+    position: absolute;
+    font-size: 0.6rem;
+    color: var(--glyph-primary);
+    opacity: 0.6;
+    letter-spacing: 8px;
+}
+
+.glyph-border::before {
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.glyph-border::after {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Animated glyph sequence */
+.glyph-sequence {
+    display: inline-block;
+    animation: glyphShift 8s linear infinite;
+}
+
+@keyframes glyphShift {
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   ORGANIC CURVED PANELS
+   ============================================ */
+
+.alien-panel {
+    background: var(--alien-panel);
+    border: 1px solid rgba(0, 255, 212, 0.2);
+    border-radius: var(--panel-radius);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.1s ease-out;
+}
+
+.alien-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--glyph-primary) 20%,
+            var(--glyph-primary) 80%,
+            transparent 100%);
+    opacity: 0.6;
+}
+
+.alien-panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at top, rgba(0, 255, 212, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Curved organic shape variant */
+.organic-panel {
+    clip-path: polygon(0% 10px,
+            10px 0%,
+            calc(100% - 10px) 0%,
+            100% 10px,
+            100% calc(100% - 10px),
+            calc(100% - 10px) 100%,
+            10px 100%,
+            0% calc(100% - 10px));
+}
+
+/* ============================================
+   VOLUMETRIC LIGHTING & ATMOSPHERE
+   ============================================ */
+
+.volumetric-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.volumetric-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(0, 255, 212, 0.03) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(136, 85, 255, 0.02) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 51, 102, 0.01) 0%, transparent 70%);
+    animation: volumetricDrift 30s ease-in-out infinite;
+}
+
+@keyframes volumetricDrift {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(2%, -2%) rotate(1deg);
+    }
+
+    66% {
+        transform: translate(-2%, 2%) rotate(-1deg);
+    }
+}
+
+/* Scanline overlay */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px);
+    pointer-events: none;
+    z-index: 9998;
+}
+
+
+
+/* ============================================
+   NAVIGATION SYSTEM
+   ============================================ */
+
+.ship-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--nav-height);
+    background: linear-gradient(180deg, var(--alien-panel-solid) 0%, rgba(8, 18, 28, 0.8) 100%);
+    border-bottom: 1px solid rgba(0, 255, 212, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+}
+
+.ship-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.ship-logo-icon {
+    width: 45px;
+    height: 45px;
+    position: relative;
+}
+
+.ship-logo-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(var(--glow-primary));
+}
+
+.ship-logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    color: var(--text-bright);
+}
+
+.ship-logo-text .highlight {
+    color: var(--glyph-primary);
+    text-shadow: var(--glow-primary);
+}
+
+.nav-sections {
+    display: flex;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 255, 212, 0.15);
+}
+
+.nav-section {
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    border-radius: 25px;
+    color: var(--text-dim);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-section:hover {
+    color: var(--glyph-primary);
+}
+
+.nav-section.active {
+    background: linear-gradient(135deg, rgba(0, 255, 212, 0.2) 0%, rgba(0, 255, 212, 0.05) 100%);
+    color: var(--glyph-primary);
+    box-shadow: 0 0 20px rgba(0, 255, 212, 0.2);
+}
+
+.nav-section.active::before {
+    content: '◈';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    color: var(--glyph-primary);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.nav-stats {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-stat {
+    text-align: right;
+}
+
+.nav-stat-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-stat-value {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: var(--glyph-primary);
+    text-shadow: 0 0 10px rgba(0, 255, 212, 0.5);
+}
+
+.nav-stat-value.alert {
+    color: var(--glyph-secondary);
+    text-shadow: var(--glow-danger);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: var(--glow-primary);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(0, 255, 212, 0.8), 0 0 100px rgba(0, 255, 212, 0.4);
+    }
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    90%,
+    100% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 0.3;
+    }
+}
+
+/* Section entry animations */
+.section-enter {
+    animation: sectionEnter 0.5s ease-out forwards;
+}
+
+@keyframes sectionEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   BUTTONS & CONTROLS
+   ============================================ */
+
+.alien-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, rgba(0, 255, 212, 0.1) 0%, rgba(0, 255, 212, 0.02) 100%);
+    border: 1px solid rgba(0, 255, 212, 0.4);
+    border-radius: 25px;
+    color: var(--glyph-primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.alien-btn:hover {
+    background: var(--glyph-primary);
+    color: var(--alien-void);
+    box-shadow: var(--glow-primary);
+}
+
+.alien-btn-icon {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alien-btn-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================
+   SCROLLBARS
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--glyph-primary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bio-glow);
+}
+
+/* ============================================
+   LOADING STATES
+   ============================================ */
+
+.alien-loader {
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.alien-loader::before,
+.alien-loader::after {
+    content: '';
+    position: absolute;
+    border: 2px solid transparent;
+    border-radius: 50%;
+}
+
+.alien-loader::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-top-color: var(--glyph-primary);
+    animation: spin 1s linear infinite;
+}
+
+.alien-loader::after {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border-bottom-color: var(--glyph-tertiary);
+    animation: spin 0.6s linear infinite reverse;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============================================
+   INTRO SPLASH SCREEN - Coast to Coast AM Style
+   ============================================ */
+
+.intro-splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, #0a1628 0%, #020408 50%, #000000 100%);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.intro-splash.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Animated Stars Background */
+.intro-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(0, 255, 212, 0.8), transparent),
+        radial-gradient(1px 1px at 230px 80px, white, transparent),
+        radial-gradient(2px 2px at 300px 150px, rgba(255, 51, 102, 0.6), transparent),
+        radial-gradient(1px 1px at 400px 50px, white, transparent),
+        radial-gradient(2px 2px at 500px 180px, rgba(255, 215, 0, 0.7), transparent),
+        radial-gradient(1px 1px at 600px 30px, white, transparent),
+        radial-gradient(2px 2px at 700px 100px, rgba(0, 255, 212, 0.6), transparent);
+    background-size: 800px 200px;
+    animation: starsMove 60s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes starsMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 800px 200px;
+    }
+}
+
+/* Nebula Glow */
+.intro-nebula {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 30% 30%, rgba(136, 85, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(0, 255, 212, 0.1) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 80%, rgba(255, 51, 102, 0.08) 0%, transparent 50%);
+    animation: nebulaPulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes nebulaPulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Content Container */
+.intro-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Radio Waves Animation */
+.radio-waves {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.wave {
+    position: absolute;
+    border: 2px solid rgba(0, 255, 212, 0.3);
+    border-radius: 50%;
+    animation: radioWaveExpand 4s ease-out infinite;
+}
+
+.wave-1 {
+    width: 100px;
+    height: 100px;
+    margin: -50px;
+    animation-delay: 0s;
+}
+
+.wave-2 {
+    width: 200px;
+    height: 200px;
+    margin: -100px;
+    animation-delay: 1s;
+}
+
+.wave-3 {
+    width: 300px;
+    height: 300px;
+    margin: -150px;
+    animation-delay: 2s;
+}
+
+.wave-4 {
+    width: 400px;
+    height: 400px;
+    margin: -200px;
+    animation-delay: 3s;
+}
+
+@keyframes radioWaveExpand {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+        border-color: rgba(0, 255, 212, 0.6);
+    }
+
+    100% {
+        transform: scale(2);
+        opacity: 0;
+        border-color: transparent;
+    }
+}
+
+/* Title Container */
+.intro-title-container {
+    position: relative;
+}
+
+.intro-frequency {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: var(--glyph-gold);
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+    animation: frequencyBlink 2s steps(2) infinite;
+}
+
+@keyframes frequencyBlink {
+
+    0%,
+    70%,
+    100% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.4;
+    }
+}
+
+.intro-main-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 800;
+    color: #fff;
+    text-shadow:
+        0 0 20px rgba(0, 255, 212, 0.8),
+        0 0 40px rgba(0, 255, 212, 0.5),
+        0 0 60px rgba(0, 255, 212, 0.3);
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow:
+            0 0 20px rgba(0, 255, 212, 0.8),
+            0 0 40px rgba(0, 255, 212, 0.5),
+            0 0 60px rgba(0, 255, 212, 0.3);
+    }
+
+    100% {
+        text-shadow:
+            0 0 30px rgba(0, 255, 212, 1),
+            0 0 60px rgba(0, 255, 212, 0.7),
+            0 0 100px rgba(0, 255, 212, 0.5),
+            0 0 150px rgba(136, 85, 255, 0.3);
+    }
+}
+
+.intro-subtitle {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+/* UFO Animation */
+.intro-ufo {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    animation: ufoFloat 4s ease-in-out infinite;
+    margin: 20px 0;
+}
+
+.ufo-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 212, 0.8));
+}
+
+.ufo-ring,
+.ufo-dome {
+    animation: ufoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes ufoGlow {
+    0% {
+        stroke-opacity: 0.6;
+    }
+
+    100% {
+        stroke-opacity: 1;
+    }
+}
+
+.ufo-light {
+    animation: lightBlink 0.5s steps(2) infinite;
+}
+
+.ufo-light-center {
+    animation: centerPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes lightBlink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes centerPulse {
+
+    0%,
+    100% {
+        r: 4;
+        fill-opacity: 1;
+    }
+
+    50% {
+        r: 6;
+        fill-opacity: 0.7;
+    }
+}
+
+@keyframes ufoFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+/* UFO Beam */
+.ufo-beam {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 80px;
+    height: 150px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg,
+            rgba(0, 255, 212, 0.4) 0%,
+            rgba(0, 255, 212, 0.1) 50%,
+            transparent 100%);
+    clip-path: polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%);
+    animation: beamPulse 2s ease-in-out infinite;
+}
+
+@keyframes beamPulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translateX(-50%) scaleY(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) scaleY(1.1);
+    }
+}
+
+/* Enter Button */
+.intro-enter-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 50px;
+    background: linear-gradient(135deg, rgba(0, 255, 212, 0.15) 0%, rgba(0, 255, 212, 0.05) 100%);
+    border: 2px solid var(--glyph-primary);
+    border-radius: 50px;
+    color: var(--glyph-primary);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    animation: buttonPulse 2s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 212, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(0, 255, 212, 0.6), 0 0 60px rgba(0, 255, 212, 0.3);
+    }
+}
+
+.intro-enter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 212, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.intro-enter-btn:hover::before {
+    left: 100%;
+}
+
+.intro-enter-btn:hover {
+    background: var(--glyph-primary);
+    color: var(--alien-void);
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(0, 255, 212, 0.8), 0 0 100px rgba(0, 255, 212, 0.4);
+}
+
+.enter-icon {
+    font-size: 1rem;
+    animation: iconPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes iconPulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* Hint Text */
+.intro-hint {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    animation: hintBlink 3s ease-in-out infinite;
+}
+
+@keyframes hintBlink {
+
+    0%,
+    40%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50%,
+    60% {
+        opacity: 0.8;
+    }
+}
+
+/* Credits */
+.intro-credits {
+    position: absolute;
+    bottom: -100px;
+    text-align: center;
+}
+
+.credit-line {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+    margin: 5px 0;
+}
+
+/* Corner Decorations */
+.corner-decor {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(0, 255, 212, 0.3);
+}
+
+.corner-decor.top-left {
+    top: 30px;
+    left: 30px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.corner-decor.top-right {
+    top: 30px;
+    right: 30px;
+    border-left: none;
+    border-bottom: none;
+}
+
+.corner-decor.bottom-left {
+    bottom: 30px;
+    left: 30px;
+    border-right: none;
+    border-top: none;
+}
+
+.corner-decor.bottom-right {
+    bottom: 30px;
+    right: 30px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Hidden Helper Class - for elements that don't need transitions */
+.hidden:not(.loading-overlay) {
+    display: none !important;
+}

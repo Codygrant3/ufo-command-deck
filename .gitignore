@@ -1,0 +1,11 @@
+.vercel
+.agent
+.agents
+.cache
+.claude
+.codex
+.superpowers
+dist
+node_modules
+.openai
+qa-artifacts

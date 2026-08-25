@@ -1,0 +1,273 @@
+{
+  "dataSources": {
+    "government": {
+      "us": [
+        {
+          "code": "sign",
+          "name": "Project Sign",
+          "years": "1948",
+          "cases": 200,
+          "status": "declassified",
+          "archive": "https://www.archives.gov",
+          "description": "First official USAF UFO study"
+        },
+        {
+          "code": "grudge",
+          "name": "Project Grudge",
+          "years": "1949-1952",
+          "cases": 244,
+          "status": "declassified",
+          "archive": "https://www.archives.gov",
+          "description": "Skeptical evaluation approach"
+        },
+        {
+          "code": "bluebook",
+          "name": "Project Blue Book",
+          "years": "1952-1969",
+          "cases": 12618,
+          "unexplained": 701,
+          "status": "declassified",
+          "archive": "https://www.archives.gov/research/military/air-force/ufos",
+          "microfilm": "NARA T-1206 (94 rolls)",
+          "fold3": "https://www.fold3.com/publication/461/us-project-blue-book-ufo-investigations-1947-1969",
+          "description": "Largest USAF UFO investigation program"
+        },
+        {
+          "code": "robertson",
+          "name": "Robertson Panel",
+          "years": "1953",
+          "status": "declassified",
+          "archive": "https://www.cia.gov/readingroom/",
+          "description": "CIA-sponsored scientific review panel"
+        },
+        {
+          "code": "condon",
+          "name": "Condon Committee",
+          "years": "1966-1968",
+          "status": "declassified",
+          "description": "University of Colorado study"
+        },
+        {
+          "code": "aatip",
+          "name": "AATIP/AAWSAP",
+          "years": "2007-2017",
+          "budget": "$22 million",
+          "status": "partially_declassified",
+          "description": "Secret Pentagon UAP program",
+          "notableCases": ["Nimitz Tic-Tac 2004", "Gimbal 2015", "GoFast 2015"]
+        },
+        {
+          "code": "uaptf",
+          "name": "UAP Task Force",
+          "years": "2017-2022",
+          "status": "active",
+          "description": "Navy-led UAP reporting standardization"
+        },
+        {
+          "code": "aaro",
+          "name": "AARO",
+          "years": "2022-present",
+          "status": "active",
+          "archive": "https://www.aaro.mil",
+          "description": "All-domain Anomaly Resolution Office"
+        },
+        {
+          "code": "nasa_uap",
+          "name": "NASA UAP Study",
+          "years": "2022-present",
+          "status": "active",
+          "description": "Independent scientific methodology panel"
+        }
+      ],
+      "international": [
+        {
+          "code": "uk_mod",
+          "name": "UK Ministry of Defence",
+          "country": "GB",
+          "years": "1950s-2009",
+          "cases": 12000,
+          "status": "declassified",
+          "archive": "https://www.nationalarchives.gov.uk/ufos/",
+          "projects": ["Project Condign 1996-2000"]
+        },
+        {
+          "code": "geipan",
+          "name": "GEIPAN",
+          "country": "FR",
+          "organization": "CNES",
+          "years": "1977-present",
+          "cases": 2500,
+          "status": "active",
+          "archive": "https://www.cnes-geipan.fr/",
+          "classification": {
+            "A": "Identified",
+            "B": "Probably identified",
+            "C": "Insufficient data",
+            "D": "Unidentified"
+          }
+        },
+        {
+          "code": "brazil",
+          "name": "Brazil National Archives",
+          "country": "BR",
+          "years": "1952-2016",
+          "cases": 3000,
+          "status": "declassified",
+          "archive": "http://arquivonacional.gov.br/",
+          "notableOperations": ["Operation Prato 1977"]
+        },
+        {
+          "code": "chile",
+          "name": "CEFAA/SEFAA",
+          "country": "CL",
+          "organization": "DGAC",
+          "years": "1997-present",
+          "status": "active"
+        },
+        {
+          "code": "canada",
+          "name": "Department of National Defence",
+          "country": "CA",
+          "status": "declassified",
+          "access": "Access to Information Program (ATIP)"
+        },
+        {
+          "code": "australia",
+          "name": "RAAF UFO Files",
+          "country": "AU",
+          "status": "declassified"
+        },
+        {
+          "code": "belgium",
+          "name": "Belgian Air Force / SOBEPS",
+          "country": "BE",
+          "years": "1989-1991",
+          "status": "declassified",
+          "notableEvents": ["Belgian UFO Wave"]
+        },
+        {
+          "code": "russia",
+          "name": "Soviet Academy of Sciences Program",
+          "country": "RU",
+          "years": "1978-1990",
+          "cases": 3000,
+          "status": "partially_declassified"
+        }
+      ]
+    },
+    "civilian": [
+      {
+        "code": "mufon",
+        "name": "MUFON",
+        "fullName": "Mutual UFO Network",
+        "founded": 1969,
+        "cases": 120000,
+        "status": "active",
+        "website": "https://www.mufon.com",
+        "cms": "https://mufoncms.com",
+        "description": "Largest civilian UFO investigation organization"
+      },
+      {
+        "code": "nuforc",
+        "name": "NUFORC",
+        "fullName": "National UFO Reporting Center",
+        "founded": 1974,
+        "cases": 170000,
+        "status": "active",
+        "website": "https://nuforc.org",
+        "databank": "https://nuforc.org/databank/",
+        "datasets": {
+          "github": "https://github.com/timothyrenner/nuforc_sightings_data",
+          "huggingface": "https://huggingface.co/datasets/kcimc/NUFORC"
+        },
+        "tierSystem": {
+          "1": "Dramatic close encounters",
+          "2": "Anomalous characteristics",
+          "3": "Unexplained",
+          "4": "Explainable"
+        }
+      },
+      {
+        "code": "blackvault",
+        "name": "The Black Vault",
+        "founded": 1996,
+        "pages": 3838797,
+        "status": "active",
+        "website": "https://www.theblackvault.com",
+        "documentArchive": "https://www.theblackvault.com/documentarchive/",
+        "caseFiles": "https://www.theblackvault.com/casefiles/",
+        "ciaCollection": {
+          "url": "https://www.theblackvault.com/documentarchive/ufos-the-central-intelligence-agency-cia-collection/",
+          "downloads": {
+            "original": "https://documents.theblackvault.com/documents/cia/CIAUFO-CD-FULLCONTENTS.zip",
+            "searchable": "https://documents.theblackvault.com/documents/cia/CIAUFO-COLLECTION-SEARCHABLE.zip"
+          },
+          "pages": 2780
+        }
+      }
+    ]
+  },
+  "caseClassification": {
+    "tiers": {
+      "1": {
+        "name": "Close Encounter",
+        "color": "#ff3355",
+        "description": "Dramatic sightings, structured craft at close range, physical evidence"
+      },
+      "2": {
+        "name": "High Anomaly",
+        "color": "#ffd700",
+        "description": "Unusual characteristics, impossible maneuvers, multiple witnesses"
+      },
+      "3": {
+        "name": "Unexplained",
+        "color": "#00ffd4",
+        "description": "Cannot be easily explained, insufficient data for higher tier"
+      },
+      "4": {
+        "name": "Explained",
+        "color": "#00aaff",
+        "description": "Identified as natural/man-made phenomenon"
+      }
+    },
+    "shapes": [
+      "Disc/Saucer",
+      "Triangle",
+      "Sphere/Orb",
+      "Cigar/Cylinder",
+      "Oval/Egg",
+      "Rectangle",
+      "Diamond",
+      "Chevron/V-Shape",
+      "Light/Fireball",
+      "Formation",
+      "Changing/Morphing",
+      "Other"
+    ]
+  },
+  "apiEndpoints": {
+    "archives": {
+      "nationalArchives": "https://catalog.archives.gov/api/v2/",
+      "ciaReadingRoom": "https://www.cia.gov/readingroom/",
+      "fbiVault": "https://vault.fbi.gov/"
+    },
+    "datasets": {
+      "nuforc": {
+        "processed": "https://raw.githubusercontent.com/timothyrenner/nuforc_sightings_data/master/data/processed/nuforc_reports.csv",
+        "schema": {
+          "date_time": "ISO 8601",
+          "city": "string",
+          "state": "2-char code",
+          "country": "string",
+          "shape": "string",
+          "duration": "string",
+          "summary": "string",
+          "posted": "date",
+          "latitude": "float",
+          "longitude": "float",
+          "report_link": "URL"
+        }
+      }
+    }
+  }
+}

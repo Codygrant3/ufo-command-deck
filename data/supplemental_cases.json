@@ -1,0 +1,1742 @@
+[
+    {
+        "id": "rb47-radar-1957",
+        "name": "RB-47 Radar-Visual Encounter",
+        "location": "South-Central USA",
+        "coordinates": {
+            "lat": 33.4,
+            "lng": -96.6
+        },
+        "date": "1957-07-17",
+        "year": 1957,
+        "shape": "Light",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "DECLASSIFIED",
+        "summary": "USAF RB-47 reconnaissance aircraft tracked UFO for 90 minutes across multiple states using ECM equipment and radar. Six highly-trained crew members witnessed. One of strongest radar-visual military cases in Blue Book files.",
+        "witnesses": "6 crew + radar",
+        "duration": "90 minutes",
+        "status": "Blue Book Unknown",
+        "credibility": 94
+    },
+    {
+        "id": "trindade-island-1958",
+        "name": "Trindade Island Photos",
+        "location": "Trindade Island, Brazil",
+        "coordinates": {
+            "lat": -20.51,
+            "lng": -29.32
+        },
+        "date": "1958-01-16",
+        "year": 1958,
+        "shape": "Saturn/Disc",
+        "tier": 2,
+        "source": "brazil",
+        "classification": "PHOTOGRAPHIC",
+        "summary": "Brazilian Navy photographer captured photos of Saturn-shaped object. 48 Navy personnel witnessed. Photos analyzed by Brazilian Navy and deemed authentic.",
+        "witnesses": "48+ Navy",
+        "duration": "several minutes",
+        "status": "Photographic Evidence",
+        "credibility": 85
+    },
+    {
+        "id": "papua-gill-1959",
+        "name": "Father Gill Papua Sighting",
+        "location": "Boianai, Papua New Guinea",
+        "coordinates": {
+            "lat": -8.5,
+            "lng": 148.0
+        },
+        "date": "1959-06-26",
+        "year": 1959,
+        "shape": "Disc",
+        "tier": 1,
+        "source": "historical",
+        "classification": "CLOSE ENCOUNTER",
+        "summary": "Anglican missionary Father William Gill and 37 witnesses observed disc with humanoid figures on top over multiple nights. Witnesses waved at entities who waved back. Highly credible mass sighting.",
+        "witnesses": "38 including priest",
+        "duration": "multiple nights",
+        "status": "Well-Documented",
+        "credibility": 88
+    },
+    {
+        "id": "exeter-nh-1965",
+        "name": "Exeter Incident",
+        "location": "Exeter, New Hampshire, USA",
+        "coordinates": {
+            "lat": 42.98,
+            "lng": -70.95
+        },
+        "date": "1965-09-03",
+        "year": 1965,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "DECLASSIFIED",
+        "summary": "Multiple witnesses including police officers observed silent object with pulsating red lights hovering low over farmhouse. Blue Book labeled 'Unidentified' after extensive investigation.",
+        "witnesses": "Police + civilians",
+        "duration": "hours",
+        "status": "Blue Book Unknown",
+        "credibility": 90
+    },
+    {
+        "id": "portage-chase-1966",
+        "name": "Portage County Police Chase",
+        "location": "Ohio-Pennsylvania, USA",
+        "coordinates": {
+            "lat": 41.2,
+            "lng": -81.2
+        },
+        "date": "1966-04-17",
+        "year": 1966,
+        "shape": "Disc",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "POLICE",
+        "summary": "Police officers chased metallic disc 85 miles from Ohio into Pennsylvania at speeds up to 103 mph. Multiple police departments involved. Object demonstrated clear superiority.",
+        "witnesses": "Multiple police officers",
+        "duration": "85 mile chase",
+        "status": "Unexplained",
+        "credibility": 91
+    },
+    {
+        "id": "westall-australia-1966",
+        "name": "Westall UFO",
+        "location": "Melbourne, Australia",
+        "coordinates": {
+            "lat": -37.95,
+            "lng": 145.08
+        },
+        "date": "1966-04-06",
+        "year": 1966,
+        "shape": "Disc",
+        "tier": 2,
+        "source": "historical",
+        "classification": "MASS SIGHTING",
+        "summary": "Over 200 students and teachers at Westall High School witnessed silver disc land in nearby field then rapidly ascend. Ground traces found. Military arrived quickly.",
+        "witnesses": "200+ students/staff",
+        "duration": "20 minutes",
+        "status": "Mass Sighting",
+        "credibility": 87
+    },
+    {
+        "id": "michalak-falcon-1967",
+        "name": "Stefan Michalak Encounter",
+        "location": "Falcon Lake, Manitoba, Canada",
+        "coordinates": {
+            "lat": 49.72,
+            "lng": -95.25
+        },
+        "date": "1967-05-20",
+        "year": 1967,
+        "shape": "Disc",
+        "tier": 1,
+        "source": "canada",
+        "classification": "PHYSICAL EFFECTS",
+        "summary": "Prospector Stefan Michalak encountered landed craft. When he touched it, received severe burns in grid pattern. Physical evidence and radiation burns documented by doctors.",
+        "witnesses": "1 + medical evidence",
+        "duration": "30 minutes",
+        "status": "Physical Evidence",
+        "credibility": 89
+    },
+    {
+        "id": "malmstrom-nukes-1967",
+        "name": "Malmstrom AFB Missiles",
+        "location": "Montana, USA",
+        "coordinates": {
+            "lat": 47.5,
+            "lng": -111.19
+        },
+        "date": "1967-03-16",
+        "year": 1967,
+        "shape": "Disc",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "MILITARY",
+        "summary": "Red glowing UFO over Malmstrom AFB caused simultaneous shutdown of 10 nuclear ICBMs. No technical explanation found. Multiple military witnesses. National security implications.",
+        "witnesses": "Military personnel",
+        "duration": "extended",
+        "status": "Unexplained",
+        "credibility": 93
+    },
+    {
+        "id": "minot-b52-1968",
+        "name": "Minot AFB B-52 Encounter",
+        "location": "North Dakota, USA",
+        "coordinates": {
+            "lat": 48.42,
+            "lng": -101.35
+        },
+        "date": "1968-10-24",
+        "year": 1968,
+        "shape": "Unknown",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "MILITARY",
+        "summary": "B-52 crew tracked object on radar during nuclear alert mission. Object descended in front of aircraft. Ground radar also tracked. Project Blue Book's final 'Unknown' before program closure.",
+        "witnesses": "B-52 crew + radar",
+        "duration": "extended",
+        "status": "Blue Book Final Unknown",
+        "credibility": 94
+    },
+    {
+        "id": "pascagoula-abduction-1973",
+        "name": "Pascagoula Abduction",
+        "location": "Mississippi, USA",
+        "coordinates": {
+            "lat": 30.37,
+            "lng": -88.56
+        },
+        "date": "1973-10-11",
+        "year": 1973,
+        "shape": "Oval",
+        "tier": 1,
+        "source": "mufon",
+        "classification": "ABDUCTION",
+        "summary": "Charles Hickson and Calvin Parker claimed abduction by robotic beings while fishing. Both passed polygraph tests. Appeared genuinely terrified. One of most credible abduction cases.",
+        "witnesses": "2 men",
+        "duration": "20 minutes",
+        "status": "Abduction Claim",
+        "credibility": 75
+    },
+    {
+        "id": "coyne-helicopter-1973",
+        "name": "Coyne Helicopter Incident",
+        "location": "Mansfield, Ohio, USA",
+        "coordinates": {
+            "lat": 40.76,
+            "lng": -82.52
+        },
+        "date": "1973-10-18",
+        "year": 1973,
+        "shape": "Cigar",
+        "tier": 1,
+        "source": "mufon",
+        "classification": "MILITARY",
+        "summary": "Army Reserve helicopter crew encountered cigar-shaped object with green light. UFO controlled helicopter's altitude, pulling it upward 2,000 feet. All four crew members were military-trained observers.",
+        "witnesses": "4 military crew",
+        "duration": "5 minutes",
+        "status": "Unexplained",
+        "credibility": 92
+    },
+    {
+        "id": "allagash-abductions-1976",
+        "name": "Allagash Abductions",
+        "location": "Maine, USA",
+        "coordinates": {
+            "lat": 45.9,
+            "lng": -69.0
+        },
+        "date": "1976-08-20",
+        "year": 1976,
+        "shape": "Sphere",
+        "tier": 2,
+        "source": "mufon",
+        "classification": "ABDUCTION",
+        "summary": "Four friends camping witnessed bright sphere. All experienced missing time. Under hypnosis, recalled similar abduction experiences. All passed polygraphs.",
+        "witnesses": "4 men",
+        "duration": "unknown missing time",
+        "status": "Multiple Abduction",
+        "credibility": 70
+    },
+    {
+        "id": "cash-landrum-1980",
+        "name": "Cash-Landrum Incident",
+        "location": "Texas, USA",
+        "coordinates": {
+            "lat": 30.2,
+            "lng": -95.0
+        },
+        "date": "1980-12-29",
+        "year": 1980,
+        "shape": "Diamond",
+        "tier": 1,
+        "source": "mufon",
+        "classification": "PHYSICAL EFFECTS",
+        "summary": "Betty Cash and Vickie Landrum encountered diamond-shaped object emitting intense heat. Both suffered severe radiation-like injuries. Escorted by military helicopters. Lawsuit filed against US government.",
+        "witnesses": "2 + child",
+        "duration": "20 minutes",
+        "status": "Physical Injuries",
+        "credibility": 88
+    },
+    {
+        "id": "hudson-valley-wave-1983",
+        "name": "Hudson Valley Wave",
+        "location": "New York, USA",
+        "coordinates": {
+            "lat": 41.4,
+            "lng": -73.9
+        },
+        "date": "1983-03-24",
+        "year": 1983,
+        "shape": "Boomerang/V",
+        "tier": 2,
+        "source": "mufon",
+        "classification": "MASS WAVE",
+        "summary": "Beginning of Hudson Valley UFO wave lasting years. Thousands witnessed massive boomerang craft. J. Allen Hynek investigated. Wave continued through mid-1980s.",
+        "witnesses": "Thousands",
+        "duration": "wave (years)",
+        "status": "Wave Event",
+        "credibility": 85
+    },
+    {
+        "id": "jal1628-alaska-1986",
+        "name": "JAL 1628 Alaska Encounter",
+        "location": "Alaska, USA",
+        "coordinates": {
+            "lat": 62.5,
+            "lng": -152.0
+        },
+        "date": "1986-11-17",
+        "year": 1986,
+        "shape": "Unknown",
+        "tier": 1,
+        "source": "faa",
+        "classification": "AVIATION",
+        "summary": "Japan Airlines cargo flight tracked by UFOs for 50 minutes over Alaska. FAA and military radar confirmed objects. Captain described object twice size of aircraft carrier.",
+        "witnesses": "Crew + radar",
+        "duration": "50 minutes",
+        "status": "FAA Investigated",
+        "credibility": 91
+    },
+    {
+        "id": "gulf-breeze-1987",
+        "name": "Gulf Breeze Wave",
+        "location": "Florida, USA",
+        "coordinates": {
+            "lat": 30.36,
+            "lng": -87.16
+        },
+        "date": "1987-11-11",
+        "year": 1987,
+        "shape": "Unknown",
+        "tier": 3,
+        "source": "mufon",
+        "classification": "PHOTOGRAPHIC",
+        "summary": "Ed Walters photographed UFO multiple times. Hundreds of other witnesses in Gulf Breeze area. Controversy over photo authenticity but broad witness base.",
+        "witnesses": "Hundreds",
+        "duration": "wave (months)",
+        "status": "Disputed Photos",
+        "credibility": 55
+    },
+    {
+        "id": "belgian-wave-start-1989",
+        "name": "Belgian UFO Wave Begins",
+        "location": "Eupen, Belgium",
+        "coordinates": {
+            "lat": 50.63,
+            "lng": 6.04
+        },
+        "date": "1989-11-29",
+        "year": 1989,
+        "shape": "Triangle",
+        "tier": 1,
+        "source": "military",
+        "classification": "MASS WAVE",
+        "summary": "Beginning of massive Belgian triangle wave. Hundreds witnessed large triangular craft. Belgian Air Force and gendarmerie investigated. Wave continued into 1990 with F-16 radar confirmations.",
+        "witnesses": "Hundreds",
+        "duration": "wave",
+        "status": "Official Investigation",
+        "credibility": 90
+    },
+    {
+        "id": "belgian-f16-intercept-1990",
+        "name": "Belgian F-16 Intercept",
+        "location": "Belgium",
+        "coordinates": {
+            "lat": 50.85,
+            "lng": 4.35
+        },
+        "date": "1990-03-30",
+        "year": 1990,
+        "shape": "Triangle",
+        "tier": 1,
+        "source": "military",
+        "classification": "MILITARY",
+        "summary": "Belgian Air Force F-16s scrambled to intercept triangular UFOs detected on radar. Objects performed impossible maneuvers, accelerating from 150 to 1,100 mph instantly. Radar evidence confirmed by multiple systems.",
+        "witnesses": "F-16 pilots + radar",
+        "duration": "1 hour",
+        "status": "Official Military Case",
+        "credibility": 95
+    },
+    {
+        "id": "mexico-eclipse-1991",
+        "name": "Mexico City Solar Eclipse UFOs",
+        "location": "Mexico City, Mexico",
+        "coordinates": {
+            "lat": 19.43,
+            "lng": -99.13
+        },
+        "date": "1991-07-11",
+        "year": 1991,
+        "shape": "Disc",
+        "tier": 2,
+        "source": "mexico",
+        "classification": "MASS SIGHTING",
+        "summary": "During total solar eclipse, hundreds videotaped silver disc hovering over Mexico City. Multiple independent videos from different locations showed same object. Extensive Mexican media coverage.",
+        "witnesses": "Hundreds with video",
+        "duration": "extended",
+        "status": "Multiple Videos",
+        "credibility": 78
+    },
+    {
+        "id": "cosford-raf-1993",
+        "name": "RAF Cosford/Shawbury",
+        "location": "Shropshire, UK",
+        "coordinates": {
+            "lat": 52.64,
+            "lng": -2.31
+        },
+        "date": "1993-03-30",
+        "year": 1993,
+        "shape": "Triangle",
+        "tier": 2,
+        "source": "mod",
+        "classification": "MILITARY",
+        "summary": "RAF personnel at Cosford and Shawbury witnessed triangular craft. Meteorological officer saw object fire beam at ground. UK Ministry of Defense investigated, no explanation found.",
+        "witnesses": "Multiple military",
+        "duration": "extended",
+        "status": "MOD Investigated",
+        "credibility": 88
+    },
+    {
+        "id": "yukon-giant-1996",
+        "name": "Yukon Giant UFO",
+        "location": "Yukon Territory, Canada",
+        "coordinates": {
+            "lat": 62.0,
+            "lng": -135.0
+        },
+        "date": "1996-12-11",
+        "year": 1996,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "canada",
+        "classification": "MASS SIGHTING",
+        "summary": "Enormous UFO witnessed by dozens over vast area of Yukon. Object described as larger than football stadium. Multiple independent witnesses across hundreds of miles reported same object simultaneously.",
+        "witnesses": "30+ independent",
+        "duration": "extended",
+        "status": "Well-Documented",
+        "credibility": 85
+    },
+    {
+        "id": "phoenix-lights-1997",
+        "name": "Phoenix Lights",
+        "location": "Phoenix, Arizona, USA",
+        "coordinates": {
+            "lat": 33.45,
+            "lng": -112.07
+        },
+        "date": "1997-03-13",
+        "year": 1997,
+        "shape": "V-Formation",
+        "tier": 1,
+        "source": "mufon",
+        "classification": "MASS SIGHTING",
+        "summary": "Massive V-shaped formation of lights witnessed by thousands across Arizona. Object estimated over a mile wide. Governor Fife Symington later admitted witnessing. Largest mass sighting in modern US history.",
+        "witnesses": "Thousands",
+        "duration": "hours",
+        "status": "Mass Event",
+        "credibility": 92
+    },
+    {
+        "id": "illinois-police-2000",
+        "name": "Illinois Police Chase",
+        "location": "Illinois, USA",
+        "coordinates": {
+            "lat": 38.8,
+            "lng": -90.0
+        },
+        "date": "2000-01-05",
+        "year": 2000,
+        "shape": "Triangle",
+        "tier": 2,
+        "source": "mufon",
+        "classification": "POLICE",
+        "summary": "Multiple police officers from different departments independently chased massive triangular craft across southern Illinois. Object moved silently at low altitude. Officers' detailed reports were  remarkably consistent.",
+        "witnesses": "5+ police officers",
+        "duration": "90 minutes",
+        "status": "Police Report",
+        "credibility": 87
+    },
+    {
+        "id": "ohare-airport-2006",
+        "name": "O'Hare International Airport",
+        "location": "Chicago, Illinois, USA",
+        "coordinates": {
+            "lat": 41.98,
+            "lng": -87.90
+        },
+        "date": "2006-11-07",
+        "year": 2006,
+        "shape": "Disc",
+        "tier": 2,
+        "source": "faa",
+        "classification": "AVIATION",
+        "summary": "United Airlines employees witnessed metallic disc hovering over gate C17. Object shot upward punching hole in clouds. FAA initially denied reports, later confirmed after Chicago Tribune investigation.",
+        "witnesses": "12+ United employees",
+        "duration": "5 minutes",
+        "status": "FAA Acknowledged",
+        "credibility": 89
+    },
+    {
+        "id": "stephenville-texas-2008",
+        "name": "Stephenville Lights",
+        "location": "Stephenville, Texas, USA",
+        "coordinates": {
+            "lat": 32.22,
+            "lng": -98.20
+        },
+        "date": "2008-01-08",
+        "year": 2008,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "mufon",
+        "classification": "MASS SIGHTING",
+        "summary": "Dozens witnessed massive object, estimated mile-wide. F-16s scrambled from nearby base. Radar data obtained via FOIA showed military aircraft in area during sightings. MUFON extensively investigated.",
+        "witnesses": "Dozens",
+        "duration": "extended",
+        "status": "Radar Confirmed",
+        "credibility": 85
+    },
+    {
+        "id": "aguadilla-puerto-rico-2013",
+        "name": "Aguadilla Puerto Rico",
+        "location": "Aguadilla, Puerto Rico",
+        "coordinates": {
+            "lat": 18.49,
+            "lng": -67.13
+        },
+        "date": "2013-04-25",
+        "year": 2013,
+        "shape": "Sphere",
+        "tier": 2,
+        "source": "dhs",
+        "classification": "MILITARY",
+        "summary": "DHS thermal imaging captured object flying at 120 mph, entering and exiting ocean. Object split into two. Detailed scientific analysis by SCU. One of best thermal video cases.",
+        "witnesses": "Thermal video",
+        "duration": "3 minutes",
+        "status": "Scientific Analysis",
+        "credibility": 88
+    },
+    {
+        "id": "chilean-navy-2014",
+        "name": "Chilean Navy UFO",
+        "location": "Off coast of Chile",
+        "coordinates": {
+            "lat": -33.0,
+            "lng": -71.5
+        },
+        "date": "2014-11-11",
+        "year": 2014,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "cefaa",
+        "classification": "MILITARY",
+        "summary": "Chilean Navy helicopter captured infrared footage of object. CEFAA (Chilean government UAP office) investigated for 2 years before releasing. Object discharged trail of unknown material.",
+        "witnesses": "Navy crew + IR video",
+        "duration": "9 minutes",
+        "status": "Official Release",
+        "credibility": 87
+    },
+    {
+        "id": "gorman-dogfight-1948",
+        "name": "Gorman Dogfight",
+        "location": "Fargo, North Dakota, USA",
+        "coordinates": {
+            "lat": 46.88,
+            "lng": -96.79
+        },
+        "date": "1948-10-01",
+        "year": 1948,
+        "shape": "Light",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "DECLASSIFIED",
+        "summary": "USAF pilot George Gorman engaged in 27-minute 'dogfight' with maneuvering light over Fargo. Object made impossible turns. Ground witnesses confirmed. Project Sign investigated.",
+        "witnesses": "Pilot + ground observers",
+        "duration": "27 minutes",
+        "status": "Blue Book Unexplained",
+        "credibility": 86
+    },
+    {
+        "id": "chiles-whitted-1948",
+        "name": "Chiles-Whitted Encounter",
+        "location": "Montgomery, Alabama, USA",
+        "coordinates": {
+            "lat": 32.38,
+            "lng": -86.30
+        },
+        "date": "1948-07-24",
+        "year": 1948,
+        "shape": "Cigar",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "DECLASSIFIED",
+        "summary": "Eastern Airlines pilots Chiles and Whitted encountered wingless cigar-shaped craft with windows. Object passed dangerously close. Ground passenger confirmed sighting.",
+        "witnesses": "2 pilots + passenger",
+        "duration": "minutes",
+        "status": "Blue Book Unexplained",
+        "credibility": 88
+    },
+    {
+        "id": "mantell-incident-1948",
+        "name": "Mantell UFO Chase",
+        "location": "Kentucky, USA",
+        "coordinates": {
+            "lat": 37.47,
+            "lng": -85.89
+        },
+        "date": "1948-01-07",
+        "year": 1948,
+        "shape": "Disc",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "DECLASSIFIED",
+        "summary": "Captain Thomas Mantell died chasing UFO. Last transmission: 'appears metallic, tremendous in size.' Officially explained as Skyhook balloon but controversy remains.",
+        "witnesses": "Multiple pilots + ground",
+        "duration": "fatal",
+        "status": "Fatal Incident",
+        "credibility": 82
+    },
+    {
+        "id": "kelly-hopkinsville-1955",
+        "name": "Kelly-Hopkinsville Encounter",
+        "location": "Kelly, Kentucky, USA",
+        "coordinates": {
+            "lat": 36.97,
+            "lng": -87.48
+        },
+        "date": "1955-08-21",
+        "year": 1955,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "CLOSE ENCOUNTER",
+        "summary": "Farm family besieged by small humanoid entities overnight. Police investigated. Physical evidence found. Witnessed by multiple family members. Classic CE3 case.",
+        "witnesses": "8+ family members",
+        "duration": "all night",
+        "status": "Unexplained",
+        "credibility": 74
+    },
+    {
+        "id": "trans-en-provence-1981",
+        "name": "Trans-en-Provence Landing",
+        "location": "France",
+        "coordinates": {
+            "lat": 43.50,
+            "lng": 6.47
+        },
+        "date": "1981-01-08",
+        "year": 1981,
+        "shape": "Disc",
+        "tier": 1,
+        "source": "geipan",
+        "classification": "PHYSICAL EVIDENCE",
+        "summary": "Farmer witnessed disc land on property. Physical ground traces analyzed by GEPAN (French official UFO office). Soil showed anomalous changes. Category D (unexplained).",
+        "witnesses": "1 + physical traces",
+        "duration": "minutes",
+        "status": "Physical Evidence",
+        "credibility": 90
+    },
+    {
+        "id": "rendlesham-forest-1980",
+        "name": "Rendlesham Forest",
+        "location": "Suffolk, UK",
+        "coordinates": {
+            "lat": 52.09,
+            "lng": 1.45
+        },
+        "date": "1980-12-26",
+        "year": 1980,
+        "shape": "Triangle",
+        "tier": 1,
+        "source": "mod",
+        "classification": "MILITARY",
+        "summary": "USAF personnel at RAF Woodbridge/Bentwaters witnessed landed craft over multiple nights. Col. Halt memo documented. Radiation readings taken. Ground traces found. UK's most famous case.",
+        "witnesses": "Multiple military",
+        "duration": "3 nights",
+        "status": "Official Military Report",
+        "credibility": 89
+    },
+    {
+        "id": "betty-barney-hill-1961",
+        "name": "Betty and Barney Hill Abduction",
+        "location": "New Hampshire, USA",
+        "coordinates": {
+            "lat": 44.25,
+            "lng": -71.57
+        },
+        "date": "1961-09-19",
+        "year": 1961,
+        "shape": "Disc",
+        "tier": 1,
+        "source": "mufon",
+        "classification": "ABDUCTION",
+        "summary": "First widely-publicized abduction case. Couple experienced missing time, later recalled medical examination aboard craft under hypnosis. Star map drawn by Betty.",
+        "witnesses": "2",
+        "duration": "2 hours missing time",
+        "status": "Classic Abduction",
+        "credibility": 76
+    },
+    {
+        "id": "kecksburg-1965",
+        "name": "Kecksburg Crash",
+        "location": "Pennsylvania, USA",
+        "coordinates": {
+            "lat": 40.18,
+            "lng": -79.46
+        },
+        "date": "1965-12-09",
+        "year": 1965,
+        "shape": "Acorn",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "CRASH",
+        "summary": "Acorn-shaped object crashed. Military quickly cordoned area and removed object. Witnesses saw hieroglyphic-like writing. Government denied everything. FOIA requests continue.",
+        "witnesses": "Multiple civilians",
+        "duration": "hours",
+        "status": "Alleged Crash/Retrieval",
+        "credibility": 72
+    },
+    {
+        "id": "lakenheath-bentwaters-1956",
+        "name": "Lakenheath-Bentwaters",
+        "location": "England",
+        "coordinates": {
+            "lat": 52.41,
+            "lng": 0.56
+        },
+        "date": "1956-08-13",
+        "year": 1956,
+        "shape": "Unknown",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "MILITARY",
+        "summary": "RAF and USAF radar tracked objects performing impossible maneuvers. Venom fighter scrambled, object circled behind it. Condon Report called it 'most puzzling' radar case.",
+        "witnesses": "Radar + pilots",
+        "duration": "hours",
+        "status": "Blue Book Unknown",
+        "credibility": 93
+    },
+    {
+        "id": "japanese-airlines-1987",
+        "name": "JAL Cargo 747 Lights",
+        "location": "Alaska",
+        "coordinates": {
+            "lat": 64.0,
+            "lng": -149.0
+        },
+        "date": "1987-01-11",
+        "year": 1987,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "faa",
+        "classification": "AVIATION",
+        "summary": "JAL cargo 747 followed by lights for extended period. Different from 1986 JAL1628 case. Crew reported, FAA aware.",
+        "witnesses": "Crew",
+        "duration": "30+ minutes",
+        "status": "FAA Report",
+        "credibility": 80
+    },
+    {
+        "id": "sao-paulo-night-1986",
+        "name": "São Paulo Night",
+        "location": "Brazil",
+        "coordinates": {
+            "lat": -23.55,
+            "lng": -46.63
+        },
+        "date": "1986-05-19",
+        "year": 1986,
+        "shape": "Multiple",
+        "tier": 1,
+        "source": "brazil",
+        "classification": "MILITARY",
+        "summary": "Brazilian Air Force scrambled jets to intercept 20+ UFOs on radar. Defense Minister confirmed on TV. One of largest military responses to UFO event.",
+        "witnesses": "Military + radar",
+        "duration": "hours",
+        "status": "Official Military Case",
+        "credibility": 91
+    },
+    {
+        "id": "nimitz-tic-tac-2004",
+        "name": "USS Nimitz Tic Tac",
+        "location": "Pacific Ocean off California",
+        "coordinates": {
+            "lat": 31.5,
+            "lng": -117.5
+        },
+        "date": "2004-11-14",
+        "year": 2004,
+        "shape": "Tic-Tac",
+        "tier": 1,
+        "source": "navy",
+        "classification": "MILITARY",
+        "summary": "USS Princeton tracked objects on radar for days. F/A-18 pilots engaged 'Tic Tac' object performing impossible maneuvers. FLIR video released 2017. Pentagon confirmed authentic.",
+        "witnesses": "Multiple pilots + radar",
+        "duration": "days of tracking",
+        "status": "Pentagon Confirmed",
+        "credibility": 96
+    },
+    {
+        "id": "gimbal-2015",
+        "name": "Gimbal Video",
+        "location": "Atlantic Ocean off Florida",
+        "coordinates": {
+            "lat": 27.0,
+            "lng": -72.0
+        },
+        "date": "2015-01-21",
+        "year": 2015,
+        "shape": "Unknown",
+        "tier": 1,
+        "source": "navy",
+        "classification": "UAP",
+        "summary": "Navy F/A-18 FLIR captured rotating object. Pentagon released 2017. Confirmed authentic UAP. Object rotated while maintaining direction.",
+        "witnesses": "Pilots + FLIR",
+        "duration": "minutes",
+        "status": "Pentagon UAP",
+        "credibility": 95
+    },
+    {
+        "id": "gofast-2015",
+        "name": "Go Fast Video",
+        "location": "Atlantic Ocean off Florida",
+        "coordinates": {
+            "lat": 25.0,
+            "lng": -73.0
+        },
+        "date": "2015-01-21",
+        "year": 2015,
+        "shape": "Sphere",
+        "tier": 1,
+        "source": "navy",
+        "classification": "UAP",
+        "summary": "Navy F/A-18 tracked fast-moving object skimming ocean surface. Pentagon released. Confirmed UAP. Object showed no visible propulsion.",
+        "witnesses": "Pilots + targeting system",
+        "duration": "minutes",
+        "status": "Pentagon UAP",
+        "credibility": 94
+    },
+    {
+        "id": "roosevelt-uap-swarm-2019",
+        "name": "USS Roosevelt UAP Swarm",
+        "location": "Atlantic Ocean off East Coast",
+        "coordinates": {
+            "lat": 32.0,
+            "lng": -70.0
+        },
+        "date": "2019-03-01",
+        "year": 2019,
+        "shape": "Sphere/Cube",
+        "tier": 1,
+        "source": "navy",
+        "classification": "UAP",
+        "summary": "USS Roosevelt pilots encountered UAPs daily for months. Objects described as sphere inside cube. Navy submitted hazard reports. Congressional briefings given.",
+        "witnesses": "Multiple Navy pilots",
+        "duration": "months",
+        "status": "Pentagon Briefed",
+        "credibility": 92
+    },
+    {
+        "id": "ariel-school-1994",
+        "name": "Ariel School Zimbabwe",
+        "location": "Ruwa, Zimbabwe",
+        "coordinates": {
+            "lat": -17.89,
+            "lng": 31.25
+        },
+        "date": "1994-09-16",
+        "year": 1994,
+        "shape": "Disc",
+        "tier": 2,
+        "source": "historical",
+        "classification": "CLOSE ENCOUNTER",
+        "summary": "62 schoolchildren witnessed craft land, beings emerged. Children interviewed separately, stories consistent. Dr. John Mack investigated. Children maintained stories as adults.",
+        "witnesses": "62 children",
+        "duration": "extended",
+        "status": "Mass Child Witness",
+        "credibility": 83
+    },
+    {
+        "id": "cometa-report-1999",
+        "name": "COMETA Report Cases",
+        "location": "France",
+        "coordinates": {
+            "lat": 46.23,
+            "lng": 2.21
+        },
+        "date": "1999-07-01",
+        "year": 1999,
+        "shape": "Various",
+        "tier": 2,
+        "source": "geipan",
+        "classification": "OFFICIAL STUDY",
+        "summary": "French COMETA committee of military/intelligence officials studied UFOs. Concluded some cases represent extraterrestrial hypothesis. Official French government study.",
+        "witnesses": "Study of multiple cases",
+        "duration": "study",
+        "status": "Official Report",
+        "credibility": 88
+    },
+    {
+        "id": "bentwaters-halt-memo-1980",
+        "name": "Halt Memo Incidents",
+        "location": "Rendlesham Forest, UK",
+        "coordinates": {
+            "lat": 52.09,
+            "lng": 1.45
+        },
+        "date": "1980-12-27",
+        "year": 1980,
+        "shape": "Triangle",
+        "tier": 1,
+        "source": "mod",
+        "classification": "MILITARY",
+        "summary": "Deputy Base Commander Lt. Col. Charles Halt documented encounter in official memo. Radiation detected, ground depressions found. Multiple military witnesses night 2-3.",
+        "witnesses": "7+ military personnel",
+        "duration": "hours",
+        "status": "Official Military Memo",
+        "credibility": 91
+    },
+    {
+        "id": "washington-national-1952-second",
+        "name": "Washington DC Second Week",
+        "location": "Washington DC, USA",
+        "coordinates": {
+            "lat": 38.91,
+            "lng": -77.04
+        },
+        "date": "1952-07-26",
+        "year": 1952,
+        "shape": "Lights",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "DECLASSIFIED",
+        "summary": "Second weekend of Washington flap. Objects returned. F-94s scrambled again. Radar contacts confirmed. Largest press conference since WWII held. Temperature inversion explanation disputed.",
+        "witnesses": "ATC + military + public",
+        "duration": "weekend",
+        "status": "Blue Book Explained",
+        "credibility": 89
+    },
+    {
+        "id": "chicago-ufo-wave-",
+        "name": "Chicago O'Hare Wave",
+        "location": "Chicago, Illinois, USA",
+        "coordinates": {
+            "lat": 41.98,
+            "lng": -87.90
+        },
+        "date": "2007-01-01",
+        "year": 2007,
+        "shape": "Disc",
+        "tier": 3,
+        "source": "mufon",
+        "classification": "AVIATION",
+        "summary": "Following 2006 incident, multiple additional sightings at O'Hare. Employees continued reporting. FAA maintained stance of no investigation.",
+        "witnesses": "Various airline employees",
+        "duration": "ongoing",
+        "status": "Multiple Reports",
+        "credibility": 76
+    },
+    {
+        "id": "battle-la-1942",
+        "name": "Battle of Los Angeles",
+        "location": "Los Angeles, California, USA",
+        "coordinates": {
+            "lat": 34.05,
+            "lng": -118.24
+        },
+        "date": "1942-02-25",
+        "year": 1942,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "historical",
+        "classification": "MILITARY",
+        "summary": "Anti-aircraft artillery fired 1,400 rounds at unidentified objects over LA. Objects undamaged. Initially thought Japanese attack. Officially explained as false alarm/weather balloon.",
+        "witnesses": "Thousands + military",
+        "duration": "hours",
+        "status": "Historical Event",
+        "credibility": 80
+    },
+    {
+        "id": "betty-andreasson-1967",
+        "name": "Andreasson Affair",
+        "location": "Massachusetts, USA",
+        "coordinates": {
+            "lat": 42.41,
+            "lng": -71.01
+        },
+        "date": "1967-01-25",
+        "year": 1967,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "mufon",
+        "classification": "ABDUCTION",
+        "summary": "Betty Andreasson abduction investigated by Raymond Fowler. Detailed account under hypnosis. Family witnessed lights. Extensive investigation spanning years. Multiple books written.",
+        "witnesses": "1 + family saw lights",
+        "duration": "hours",
+        "status": "Abduction Case",
+        "credibility": 69
+    },
+    {
+        "id": "salyut-6-1981",
+        "name": "Salyut-6 Encounter",
+        "location": "Earth Orbit",
+        "coordinates": {
+            "lat": 0.0,
+            "lng": 0.0
+        },
+        "date": "1981-05-14",
+        "year": 1981,
+        "shape": "Unknown",
+        "tier": 3,
+        "source": "russia",
+        "classification": "SPACE",
+        "summary": "Soviet cosmonauts aboard Salyut-6 reported unusual object pacing station. Officially denied but accounts persisted. Multiple crew member reports.",
+        "witnesses": "Cosmonauts",
+        "duration": "extended",
+        "status": "Unofficial Report",
+        "credibility": 60
+    },
+    {
+        "id": "moroccan-f1-jets-2001",
+        "name": "Moroccan F-1 Encounter",
+        "location": "Morocco",
+        "coordinates": {
+            "lat": 32.0,
+            "lng": -6.0
+        },
+        "date": "2001-10-21",
+        "year": 2001,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "military",
+        "classification": "MILITARY",
+        "summary": "Moroccan Air Force F-1 jets scrambled to intercept unknown radar target. Object outmaneuvered jets. Incident reported by military sources.",
+        "witnesses": "F-1 pilots + radar",
+        "duration": "extended",
+        "status": "Military Report",
+        "credibility": 79
+    },
+    {
+        "id": "persian-ufo-2004",
+        "name": "Tehran F-14 Intercept 2004",
+        "location": "Iran",
+        "coordinates": {
+            "lat": 35.69,
+            "lng": 51.39
+        },
+        "date": "2004-09-01",
+        "year": 2004,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "military",
+        "classification": "MILITARY",
+        "summary": "Iranian F-14 intercepted UFO. Weapons systems jammed similar to 1976 case. Multiple similar incidents in 2000s. Iranian officials confirmed encounters.",
+        "witnesses": "F-14 crew",
+        "duration": "extended",
+        "status": "Military Confirmed",
+        "credibility": 82
+    },
+    {
+        "id": "norwegian-spiral-2009",
+        "name": "Norwegian Spiral",
+        "location": "Norway",
+        "coordinates": {
+            "lat": 69.0,
+            "lng": 20.0
+        },
+        "date": "2009-12-09",
+        "year": 2009,
+        "shape": "Spiral",
+        "tier": 3,
+        "source": "historical",
+        "classification": "EXPLAINED",
+        "summary": "Massive spiral light over Norway. Thousands witnessed. Initially unexplained. Later confirmed as failed Russian ICBM test. Interesting case of mass UFO sighting with prosaic explanation.",
+        "witnesses": "Thousands",
+        "duration": "minutes",
+        "status": "Explained - Missile",
+        "credibility": 100
+    },
+    {
+        "id": "turkey-ufo-videos-2007",
+        "name": "Turkey UFO Videos",
+        "location": "Turkey",
+        "coordinates": {
+            "lat": 41.01,
+            "lng": 28.98
+        },
+        "date": "2007-06-08",
+        "year": 2007,
+        "shape": "Unknown",
+        "tier": 3,
+        "source": "historical",
+        "classification": "PHOTOGRAPHIC",
+        "summary": "Yalcin Yalman videotaped objects over Sea of Marmara multiple times. Close-up videos showed structure. Extensively analyzed. Some claim cruise ship, others unexplained.",
+        "witnesses": "1 videographer",
+        "duration": "multiple occasions",
+        "status": "Disputed Video",
+        "credibility": 55
+    },
+    {
+        "id": "colares-ufo-attacks-1977",
+        "name": "Colares UFO Attacks",
+        "location": "Colares, Brazil",
+        "coordinates": {
+            "lat": -0.93,
+            "lng": -48.28
+        },
+        "date": "1977-10-01",
+        "year": 1977,
+        "shape": "Various",
+        "tier": 1,
+        "source": "brazil",
+        "classification": "CLOSE ENCOUNTER",
+        "summary": "Multiple residents reported being attacked by UFO beams causing burns and injuries. Brazilian Air Force Operation Prato investigated. Over 2,000 pages of documents. Doctor treated victims.",
+        "witnesses": "Hundreds",
+        "duration": "months",
+        "status": "Official Investigation",
+        "credibility": 84
+    },
+    {
+        "id": "varginha-brazil-1996",
+        "name": "Varginha Incident",
+        "location": "Varginha, Brazil",
+        "coordinates": {
+            "lat": -21.55,
+            "lng": -45.44
+        },
+        "date": "1996-01-20",
+        "year": 1996,
+        "shape": "Crash",
+        "tier": 2,
+        "source": "brazil",
+        "classification": "CRASH/RETRIEVAL",
+        "summary": "Alleged crash and retrieval of craft and entities. Multiple civilian and military witnesses. Deaths reported. Brazilian military denies. Ongoing investigation by researchers.",
+        "witnesses": "Multiple civilians + alleged military",
+        "duration": "days",
+        "status": "Alleged Crash",
+        "credibility": 64
+    },
+    {
+        "id": "japan-airlines-anchorage-1987",
+        "name": "JAL Flight 1628 Extended",
+        "location": "Alaska to Iceland",
+        "coordinates": {
+            "lat": 65.0,
+            "lng": -160.0
+        },
+        "date": "1987-01-11",
+        "year": 1987,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "faa",
+        "classification": "AVIATION",
+        "summary": "Follow-up sightings by JAL crews on similar routes. Multiple pilots reported encounters. FAA aware but no official investigation like 1986 case.",
+        "witnesses": "Multiple crews",
+        "duration": "various",
+        "status": "Multiple Reports",
+        "credibility": 75
+    },
+    {
+        "id": "washington-state-2019",
+        "name": "Washington State Drones",
+        "location": "Washington State, USA",
+        "coordinates": {
+            "lat": 48.0,
+            "lng": -122.0
+        },
+        "date": "2019-09-01",
+        "year": 2019,
+        "shape": "Unknown",
+        "tier": 3,
+        "source": "fbi",
+        "classification": "DRONES",
+        "summary": "Multiple reports of drone swarms over sensitive areas. FBI investigated. No operators found. Similar to Colorado drone swarms. Remains unexplained.",
+        "witnesses": "Multiple civilians + authorities",
+        "duration": "months",
+        "status": "Under Investigation",
+        "credibility": 70
+    },
+    {
+        "id": "colorado-drone-swarm-2019",
+        "name": "Colorado Drone Mystery",
+        "location": "Colorado/Nebraska, USA",
+        "coordinates": {
+            "lat": 40.5,
+            "lng": -102.5
+        },
+        "date": "2019-12-01",
+        "year": 2019,
+        "shape": "Multiple",
+        "tier": 3,
+        "source": "faa",
+        "classification": "DRONES",
+        "summary": "Large drone formations seen over rural Colorado/Nebraska. FAA, FBI investigated. No operators identified. Objects showed coordinated behavior.",
+        "witnesses": "Hundreds",
+        "duration": "weeks",
+        "status": "Unexplained Drones",
+        "credibility": 73
+    },
+    {
+        "id": "china-airport-closures-2010",
+        "name": "Chinese Airport Closures",
+        "location": "Various, China",
+        "coordinates": {
+            "lat": 39.9,
+            "lng": 116.4
+        },
+        "date": "2010-07-07",
+        "year": 2010,
+        "shape": "Unknown",
+        "tier": 2,
+        "source": "china",
+        "classification": "AVIATION",
+        "summary": "Multiple major Chinese airports closed due to UFO sightings. Official government acknowledgment. Flights diverted. Objects on radar. Limited official information released.",
+        "witnesses": "Airport personnel + radar",
+        "duration": "hours",
+        "status": "Official Closures",
+        "credibility": 86
+    },
+    {
+        "id": "chinese-military-ufo-2021",
+        "name": "Chinese Military UFO Video",
+        "location": "China",
+        "coordinates": {
+            "lat": 35.0,
+            "lng": 105.0
+        },
+        "date": "2021-06-01",
+        "year": 2021,
+        "shape": "Unknown",
+        "tier": 3,
+        "source": "china",
+        "classification": "MILITARY",
+        "summary": "Video allegedly from Chinese military showing UFO. Limited verification. Part of increasing Chinese government acknowledgment of UFO/UAP phenomena.",
+        "witnesses": "Military personnel",
+        "duration": "minutes",
+        "status": "Unverified",
+        "credibility": 50
+    },
+    {
+        "id": "disclosure-hearing-2023",
+        "name": "Congressional UAP Hearing Cases",
+        "location": "Washington DC, USA",
+        "coordinates": {
+            "lat": 38.89,
+            "lng": -77.01
+        },
+        "date": "2023-07-26",
+        "year": 2023,
+        "shape": "Various",
+        "tier": 1,
+        "source": "congress",
+        "classification": "OFFICIAL TESTIMONY",
+        "summary": "David Grusch, Fravor, Graves testified to Congress. Grusch claimed non-human craft in government possession. Historic public hearing on UAPs. Calls for transparency.",
+        "witnesses": "Whistleblowers + pilots",
+        "duration": "hearing",
+        "status": "Congressional Testimony",
+        "credibility": 88
+    },
+    {
+        "id": "skinwalker-ranch-ongoing",
+        "name": "Skinwalker Ranch Phenomena",
+        "location": "Utah, USA",
+        "coordinates": {
+            "lat": 40.26,
+            "lng": -109.89
+        },
+        "date": "1996-01-01",
+        "year": 1996,
+        "shape": "Various",
+        "tier": 2,
+        "source": "bigelow",
+        "classification": "PARANORMAL",
+        "summary": "Robert Bigelow's NIDS studied ranch with high strangeness reports. UFOs, poltergeist, animal mutilations. Ongoing scientific study. Connected to AATIP research.",
+        "witnesses": "Multiple researchers",
+        "duration": "ongoing",
+        "status": "Ongoing Study",
+        "credibility": 70
+    },
+    {
+        "id": "uss-omaha-sphere-2019",
+        "name": "USS Omaha Transmedium",
+        "location": "Pacific Ocean",
+        "coordinates": {
+            "lat": 32.0,
+            "lng": -118.0
+        },
+        "date": "2019-07-15",
+        "year": 2019,
+        "shape": "Sphere",
+        "tier": 1,
+        "source": "navy",
+        "classification": "UAP",
+        "summary": "USS Omaha tracked sphere on radar and visually. Object descended into ocean. Claimed 'transmedium' capability. Radar footage leaked, Pentagon confirmed authentic.",
+        "witnesses": "Navy crew + radar",
+        "duration": "extended",
+        "status": "Pentagon Confirmed",
+        "credibility": 93
+    },
+    {
+        "id": "pentagon-uap-videos-2020",
+        "name": "Pentagon UAP Video Release",
+        "location": "Various",
+        "coordinates": {
+            "lat": 38.87,
+            "lng": -77.06
+        },
+        "date": "2020-04-27",
+        "year": 2020,
+        "shape": "Various",
+        "tier": 1,
+        "source": "pentagon",
+        "classification": "UAP",
+        "summary": "Pentagon officially released Nimitz, Gimbal, GoFast videos. Confirmed authenticity. Acknowledged UAPs remain unexplained. Historic moment in UFO disclosure.",
+        "witnesses": "Official release",
+        "duration": "announcement",
+        "status": "Official Acknowledgment",
+        "credibility": 98
+    },
+    {
+        "id": "uaptf-report-2021",
+        "name": "UAP Task Force Report",
+        "location": "Washington DC",
+        "coordinates": {
+            "lat": 38.89,
+            "lng": -77.01
+        },
+        "date": "2021-06-25",
+        "year": 2021,
+        "shape": "Various",
+        "tier": 1,
+        "source": "odni",
+        "classification": "OFFICIAL REPORT",
+        "summary": "Office of Director of National Intelligence released preliminary UAP assessment. 144 incidents since 2004, 143 remain unexplained. Acknowledged safety/security concerns.",
+        "witnesses": "Government report",
+        "duration": "report",
+        "status": "Official Government Report",
+        "credibility": 97
+    },
+    {
+        "id": "france-cometa-cases-1999",
+        "name": "COMETA Lac de Chauvet",
+        "location": "France",
+        "coordinates": {
+            "lat": 46.0,
+            "lng": 3.20
+        },
+        "date": "1952-09-10",
+        "year": 1952,
+        "shape": "Disc",
+        "tier": 2,
+        "source": "geipan",
+        "classification": "PHOTOGRAPHIC",
+        "summary": "Witness photographed disc over Lac de Chauvet. Featured prominently in COMETA report as credible photographic case. French military analyzed.",
+        "witnesses": "1 photographer",
+        "duration": "minutes",
+        "status": "COMETA Case",
+        "credibility": 78
+    },
+    {
+        "id": "mariana-ufo-film-1950",
+        "name": "Mariana UFO Film",
+        "location": "Great Falls, Montana, USA",
+        "coordinates": {
+            "lat": 47.5053,
+            "lng": -111.3008
+        },
+        "date": "1950-08-15",
+        "year": 1950,
+        "shape": "Disc/Light",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "PHOTOGRAPHIC",
+        "summary": "Minor-league baseball manager Nicholas Mariana filmed two bright objects crossing the sky over Great Falls. The film became one of the earliest motion-picture UFO cases examined in the Air Force investigation record.",
+        "witnesses": "2 visual witnesses + film",
+        "duration": "seconds",
+        "status": "Project Blue Book case",
+        "credibility": 78
+    },
+    {
+        "id": "fort-monmouth-radar-1951",
+        "name": "Fort Monmouth Radar Case",
+        "location": "Fort Monmouth, New Jersey, USA",
+        "coordinates": {
+            "lat": 40.3126,
+            "lng": -74.0360
+        },
+        "date": "1951-09-10",
+        "year": 1951,
+        "shape": "Radar Target",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "RADAR",
+        "summary": "Army Signal Corps radar operators tracked fast unknown targets during radar demonstrations at Fort Monmouth. The incident helped revive official Air Force UFO investigation activity leading into Project Blue Book.",
+        "witnesses": "Radar operators + Army personnel",
+        "duration": "multiple tracks",
+        "status": "Military Radar Case",
+        "credibility": 86
+    },
+    {
+        "id": "newhouse-tremonton-film-1952",
+        "name": "Tremonton UFO Film",
+        "location": "Tremonton, Utah, USA",
+        "coordinates": {
+            "lat": 41.7119,
+            "lng": -112.1655
+        },
+        "date": "1952-07-02",
+        "year": 1952,
+        "shape": "Light",
+        "tier": 2,
+        "source": "bluebook",
+        "classification": "PHOTOGRAPHIC",
+        "summary": "Navy photographer Delbert Newhouse filmed a group of bright objects near Tremonton. The footage was studied alongside the Mariana film as one of the better-known early Project Blue Book photographic cases.",
+        "witnesses": "Family witnesses + film",
+        "duration": "minutes",
+        "status": "Project Blue Book case",
+        "credibility": 76
+    },
+    {
+        "id": "carson-sink-1952",
+        "name": "Carson Sink Encounter",
+        "location": "Carson Sink, Nevada, USA",
+        "coordinates": {
+            "lat": 39.8500,
+            "lng": -118.5000
+        },
+        "date": "1952-07-24",
+        "year": 1952,
+        "shape": "Delta/Wing",
+        "tier": 1,
+        "source": "bluebook",
+        "classification": "MILITARY",
+        "summary": "Two U.S. Air Force colonels flying a B-25 near Carson Sink reported three fast, delta-like objects passing near their aircraft. The report is commonly listed among Project Blue Book unknowns.",
+        "witnesses": "2 USAF colonels",
+        "duration": "seconds",
+        "status": "Blue Book Unknown",
+        "credibility": 88
+    },
+    {
+        "id": "val-johnson-1979",
+        "name": "Val Johnson Incident",
+        "location": "Marshall County, Minnesota, USA",
+        "coordinates": {
+            "lat": 48.4500,
+            "lng": -96.8750
+        },
+        "date": "1979-08-27",
+        "year": 1979,
+        "shape": "Light",
+        "tier": 2,
+        "source": "police",
+        "classification": "PHYSICAL TRACE",
+        "summary": "Deputy Sheriff Val Johnson reported that a bright light struck his patrol car near Stephen, Minnesota. The incident involved injuries, damaged vehicle glass and lights, and stopped timepieces, making it a notable police physical-trace case.",
+        "witnesses": "1 deputy + responding officers",
+        "duration": "missing time reported",
+        "status": "Unresolved",
+        "credibility": 82
+    },
+    {
+        "id": "clarenville-rcmp-1978",
+        "name": "Clarenville RCMP Encounter",
+        "location": "Clarenville, Newfoundland and Labrador, Canada",
+        "coordinates": {
+            "lat": 48.1667,
+            "lng": -53.9667
+        },
+        "date": "1978-10-26",
+        "year": 1978,
+        "shape": "Oval/Lighted Object",
+        "tier": 2,
+        "source": "rcmp",
+        "classification": "POLICE",
+        "summary": "Multiple witnesses, including RCMP Constable James Blackwood, observed a brightly lit object over Random Island and Clarenville. The case remains one of Newfoundland's best-known police-witness UFO reports.",
+        "witnesses": "RCMP + civilians",
+        "duration": "over an hour",
+        "status": "Unexplained",
+        "credibility": 84
+    },
+    {
+        "id": "emilcin-abduction-1978",
+        "name": "Emilcin Abduction",
+        "location": "Emilcin, Poland",
+        "coordinates": {
+            "lat": 51.1667,
+            "lng": 22.0833
+        },
+        "date": "1978-05-10",
+        "year": 1978,
+        "shape": "Craft",
+        "tier": 3,
+        "source": "historical",
+        "classification": "ABDUCTION CLAIM",
+        "summary": "Polish farmer Jan Wolski reported being taken aboard a landed craft near Emilcin and examined by short humanoid beings. A memorial later marked the alleged landing site, making it Poland's most famous abduction claim.",
+        "witnesses": "1 primary witness",
+        "duration": "brief encounter",
+        "status": "Alleged Abduction",
+        "credibility": 58
+    },
+    {
+        "id": "calvine-ufo-1990",
+        "name": "Calvine UFO Photograph",
+        "location": "Calvine, Perthshire, Scotland",
+        "coordinates": {
+            "lat": 56.7667,
+            "lng": -3.9667
+        },
+        "date": "1990-08-04",
+        "year": 1990,
+        "shape": "Diamond",
+        "tier": 2,
+        "source": "uk-mod",
+        "classification": "PHOTOGRAPHIC",
+        "summary": "Two witnesses near Calvine reported seeing and photographing a large diamond-shaped object accompanied by a military aircraft. The case became prominent through UK Ministry of Defence and National Archives material.",
+        "witnesses": "2 witnesses + photograph",
+        "duration": "minutes",
+        "status": "MOD File",
+        "credibility": 79
+    },
+    {
+        "id": "alderney-channel-islands-2007",
+        "name": "Alderney Channel Islands Sighting",
+        "location": "Alderney, Channel Islands",
+        "coordinates": {
+            "lat": 49.7136,
+            "lng": -2.2200
+        },
+        "date": "2007-04-23",
+        "year": 2007,
+        "shape": "Large Yellow Object",
+        "tier": 1,
+        "source": "aviation",
+        "classification": "PILOT/RADAR",
+        "summary": "Aurigny pilot Ray Bowyer, passengers, air traffic control, and another pilot reported unusual bright objects near Alderney. The event generated a detailed civil aviation and scientific review.",
+        "witnesses": "2 pilots + passengers + ATC",
+        "duration": "minutes",
+        "status": "Civil Aviation Report",
+        "credibility": 88
+    },
+    {
+        "id": "lake-michigan-radar-1994",
+        "name": "Lake Michigan Radar Event",
+        "location": "Western Michigan, USA",
+        "coordinates": {
+            "lat": 42.7875,
+            "lng": -86.1089
+        },
+        "date": "1994-03-08",
+        "year": 1994,
+        "shape": "Lights",
+        "tier": 2,
+        "source": "nuforc",
+        "classification": "RADAR/MASS SIGHTING",
+        "summary": "Hundreds of western Michigan residents reported unusual lights over Lake Michigan. Police dispatchers contacted the National Weather Service, where radar returns were described as fast-moving unusual targets.",
+        "witnesses": "Hundreds + radar operator",
+        "duration": "hours",
+        "status": "Radar-Visual Event",
+        "credibility": 84
+    },
+    {
+        "id": "canneto-caronia-fires-2004",
+        "name": "Canneto di Caronia Fires",
+        "location": "Canneto di Caronia, Sicily, Italy",
+        "coordinates": {
+            "lat": 38.0278,
+            "lng": 14.4067
+        },
+        "date": "2004-01-01",
+        "year": 2004,
+        "shape": "Electromagnetic Anomaly",
+        "tier": 3,
+        "source": "italy",
+        "classification": "ANOMALOUS PHENOMENON",
+        "summary": "A series of unexplained fires and electrical anomalies affected homes in Canneto di Caronia during 2004-2005, drawing investigation by Italian authorities and scientists. The case is included as an anomalous-events file rather than a direct craft sighting.",
+        "witnesses": "Residents + investigators",
+        "duration": "months",
+        "status": "Partly disputed",
+        "credibility": 55
+    },
+    {
+        "id": "morristown-ufo-hoax-2009",
+        "name": "Morristown UFO Hoax",
+        "location": "Morristown, New Jersey, USA",
+        "coordinates": {
+            "lat": 40.7968,
+            "lng": -74.4815
+        },
+        "date": "2009-01-05",
+        "year": 2009,
+        "shape": "Red Lights",
+        "tier": 4,
+        "source": "historical",
+        "classification": "HOAX",
+        "summary": "A series of red-light sightings over Morristown was later admitted to be a staged hoax using balloons and flares. It is useful as a comparison case for witness interpretation and media amplification.",
+        "witnesses": "Multiple public reports",
+        "duration": "45 minutes",
+        "status": "Confirmed Hoax",
+        "credibility": 20
+    },
+    {
+        "id": "persian-gulf-formation-2019",
+        "name": "Persian Gulf UAP Formation",
+        "location": "Persian Gulf, U.S. CENTCOM area",
+        "coordinates": {
+            "lat": 26.75,
+            "lng": 52.0
+        },
+        "date": "2019-10-01",
+        "year": 2019,
+        "shape": "Three-object formation",
+        "tier": 2,
+        "source": "pursue-release-02",
+        "classification": "OFFICIAL RELEASE",
+        "summary": "PURSUE Release 02 includes a Middle East infrared military-platform video described in press coverage as three UAP flying in formation over the Persian Gulf. The archive classifies the released material as unresolved rather than explanatory proof.",
+        "witnesses": "Military sensor platform",
+        "duration": "Video segment",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 72
+    },
+    {
+        "id": "iran-four-object-formation-2022",
+        "name": "Iran Four-Object Maritime Formation",
+        "location": "Waters off Iran",
+        "coordinates": {
+            "lat": 25.5,
+            "lng": 56.6
+        },
+        "date": "2022-01-01",
+        "year": 2022,
+        "shape": "Four objects",
+        "tier": 2,
+        "source": "pursue-release-02",
+        "classification": "OFFICIAL RELEASE",
+        "summary": "Release 02 reporting identifies a 2022 military video showing four unidentified objects moving past vessels on the water off Iran. The case is cataloged here as a released sensor-video item pending deeper review of the original file.",
+        "witnesses": "Military sensor platform",
+        "duration": "Video segment",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 70
+    },
+    {
+        "id": "syria-fast-moving-uap-2021",
+        "name": "Syria Fast-Moving UAP",
+        "location": "Syria, U.S. CENTCOM area",
+        "coordinates": {
+            "lat": 35.0,
+            "lng": 38.5
+        },
+        "date": "2021-01-01",
+        "year": 2021,
+        "shape": "Fast-moving object",
+        "tier": 2,
+        "source": "pursue-release-02",
+        "classification": "OFFICIAL RELEASE",
+        "summary": "PURSUE Release 02 coverage describes a 2021 Syria video in which an unidentified object rapidly departs the sensor frame. The archive item is retained as an unresolved UAP record, not as a determination of origin.",
+        "witnesses": "Military sensor platform",
+        "duration": "Video segment",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 68
+    },
+    {
+        "id": "east-china-sea-football-uap-2022",
+        "name": "East China Sea Football-Shaped UAP",
+        "location": "East China Sea",
+        "coordinates": {
+            "lat": 30.0,
+            "lng": 126.0
+        },
+        "date": "2022-10-01",
+        "year": 2022,
+        "shape": "Football-shaped object",
+        "tier": 2,
+        "source": "pursue-release-02",
+        "classification": "OFFICIAL RELEASE",
+        "summary": "News summaries of Release 02 identify an October 2022 video over the East China Sea showing an American-football-shaped object. This entry tracks the released video as a Pacific theater UAP case.",
+        "witnesses": "Military sensor platform",
+        "duration": "Video segment",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 70
+    },
+    {
+        "id": "columbus-ohio-infrared-uap-2022",
+        "name": "Columbus Ohio Infrared UAP",
+        "location": "Columbus, Ohio, USA",
+        "coordinates": {
+            "lat": 39.9612,
+            "lng": -82.9988
+        },
+        "date": "2022-11-01",
+        "year": 2022,
+        "shape": "Multiple infrared targets",
+        "tier": 2,
+        "source": "pursue-release-02",
+        "classification": "OFFICIAL RELEASE",
+        "summary": "Release 02 reporting describes November 2022 infrared footage likely from a U.S. military platform in the NORTHCOM area, with several UAP observed around Columbus. The case is included as a domestic sensor-video release.",
+        "witnesses": "Military sensor platform",
+        "duration": "Video segment",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 69
+    },
+    {
+        "id": "sandia-green-fireballs-1948-1950",
+        "name": "Sandia Green Fireballs Investigation",
+        "location": "Sandia, New Mexico, USA",
+        "coordinates": {
+            "lat": 35.0594,
+            "lng": -106.5406
+        },
+        "date": "1948-01-01",
+        "year": 1948,
+        "shape": "Green orbs, discs, and fireballs",
+        "tier": 1,
+        "source": "pursue-release-02",
+        "classification": "OFFICIAL RELEASE",
+        "summary": "Release 02 includes documentation from the Armed Forces Special Weapons Program and U.S. Air Force concerning 209 reports near Sandia, New Mexico, from 1948 to 1950. The records describe green orbs, discs, fireballs, and related investigation activity near a sensitive military installation.",
+        "witnesses": "Military investigators + multiple reports",
+        "duration": "1948-1950",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 82
+    },
+    {
+        "id": "apollo-12-light-streaks-1969",
+        "name": "Apollo 12 Light Streaks Debrief",
+        "location": "Apollo 12 mission audio",
+        "coordinates": {
+            "lat": 28.5729,
+            "lng": -80.6490
+        },
+        "date": "1969-11-24",
+        "year": 1969,
+        "shape": "Streaks of light",
+        "tier": 2,
+        "source": "pursue-release-02",
+        "classification": "NASA AUDIO",
+        "summary": "Release 02 includes NASA medical-debrief audio in which Apollo 12 crew members describe light flashes or streaks of light seen during the mission. The globe location is anchored to the mission launch site because the observation was spaceflight audio rather than a ground sighting.",
+        "witnesses": "Apollo 12 crew",
+        "duration": "Mission debrief",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 74
+    },
+    {
+        "id": "mercury-atlas-8-white-objects-1962",
+        "name": "Mercury-Atlas 8 White Objects",
+        "location": "Mercury-Atlas 8 mission audio",
+        "coordinates": {
+            "lat": 28.5729,
+            "lng": -80.6490
+        },
+        "date": "1962-10-03",
+        "year": 1962,
+        "shape": "Small white objects",
+        "tier": 2,
+        "source": "pursue-release-02",
+        "classification": "NASA AUDIO",
+        "summary": "Release 02 includes NASA audio from Mercury-Atlas 8 in which astronaut Wally Schirra describes small white objects apparently drifting from the capsule and a brief unidentified light at the window. The case is archived as mission audio rather than a terrestrial sighting.",
+        "witnesses": "Wally Schirra",
+        "duration": "Mission audio segment",
+        "status": "Released in PURSUE Release 02",
+        "credibility": 73
+    }
+]

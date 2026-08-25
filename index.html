@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description"
+        content="UFO Command Deck - Immersive investigation platform exploring 75+ years of declassified UFO/UAP encounters">
+    <title>UFO COMMAND DECK // Declassified Encounter Archive</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=Source+Code+Pro:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/alien-core.css">
+    <link rel="stylesheet" href="css/command-deck.css?v=mobile-globe-tap-20260731">
+    <link rel="stylesheet" href="css/dossier.css?v=press-clippings-20260628">
+    <link rel="stylesheet" href="css/archives-hallway.css?v=archive-vault-redesign-20260725">
+    <link rel="stylesheet" href="css/theater-mode.css">
+    <link rel="stylesheet" href="css/figma-motion.css?v=motion-pass-20260627">
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><ellipse cx='50' cy='55' rx='35' ry='12' fill='none' stroke='%2300ffd4' stroke-width='3'/><ellipse cx='50' cy='45' rx='20' ry='15' fill='none' stroke='%2300ffd4' stroke-width='3'/></svg>">
+</head>
+
+<body>
+    <!-- Volumetric Background -->
+    <div class="volumetric-bg"></div>
+
+    <!-- Scanlines Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- INTRO SPLASH SCREEN - Coast to Coast AM Style -->
+    <div class="intro-splash" id="introSplash">
+        <div class="intro-stars"></div>
+        <div class="intro-nebula"></div>
+
+        <div class="intro-content">
+            <!-- Radio Wave Animation -->
+            <div class="radio-waves">
+                <div class="wave wave-1"></div>
+                <div class="wave wave-2"></div>
+                <div class="wave wave-3"></div>
+                <div class="wave wave-4"></div>
+            </div>
+
+            <!-- Title -->
+            <div class="intro-title-container">
+                <div class="intro-frequency">AM 1090 KHz</div>
+                <h1 class="intro-main-title">THE MIDNIGHT MERIDIAN</h1>
+                <div class="intro-subtitle">Broadcasting from the edge of the unknown</div>
+            </div>
+
+            <!-- UFO Animation -->
+            <div class="intro-ufo">
+                <svg viewBox="0 0 120 60" class="ufo-svg">
+                    <ellipse cx="60" cy="35" rx="50" ry="12" fill="none" stroke="#00ffd4" stroke-width="2"
+                        class="ufo-ring" />
+                    <ellipse cx="60" cy="28" rx="30" ry="18" fill="none" stroke="#00ffd4" stroke-width="2"
+                        class="ufo-dome" />
+                    <circle cx="60" cy="35" r="4" fill="#00ffd4" class="ufo-light-center" />
+                    <circle cx="30" cy="35" r="3" fill="#ff3366" class="ufo-light" />
+                    <circle cx="90" cy="35" r="3" fill="#ff3366" class="ufo-light" />
+                    <circle cx="45" cy="35" r="2" fill="#ffd700" class="ufo-light" />
+                    <circle cx="75" cy="35" r="2" fill="#ffd700" class="ufo-light" />
+                </svg>
+                <div class="ufo-beam"></div>
+            </div>
+
+            <!-- Enter Button -->
+            <button class="intro-enter-btn" id="introEnterBtn">
+                <span class="enter-icon">◈</span>
+                <span class="enter-text">ENTER THE BROADCAST</span>
+                <span class="enter-icon">◈</span>
+            </button>
+
+            <div class="intro-hint">Click to begin transmission • Audio enabled</div>
+
+            <!-- Bottom Credits -->
+            <div class="intro-credits">
+                <div class="credit-line">Tonight's Program: UFO Command Deck</div>
+                <div class="credit-line">Exploring 75+ years of unexplained encounters</div>
+            </div>
+        </div>
+
+        <!-- Animated Corner Decorations -->
+        <div class="corner-decor top-left"></div>
+        <div class="corner-decor top-right"></div>
+        <div class="corner-decor bottom-left"></div>
+        <div class="corner-decor bottom-right"></div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="alien-loader-container">
+            <!-- The Midnight Meridian Logo -->
+            <div class="midnight-meridian-loader">
+                <img src="assets/midnight-meridian-logo.png" alt="The Midnight Meridian - AM 1090 Desert Radio"
+                    class="loading-logo">
+                <div class="logo-glow"></div>
+            </div>
+
+            <div class="loading-text alien-glyph">TUNING FREQUENCY...</div>
+            <div class="loading-subtext">AM 1090 - Broadcasting from the high desert</div>
+
+            <div class="loading-progress">
+                <div class="loading-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ship Navigation -->
+    <nav class="ship-nav">
+        <div class="ship-logo">
+            <div class="ship-logo-icon">
+                <svg viewBox="0 0 50 50">
+                    <ellipse cx="25" cy="30" rx="22" ry="8" fill="none" stroke="#00ffd4" stroke-width="1.5" />
+                    <ellipse cx="25" cy="24" rx="14" ry="10" fill="none" stroke="#00ffd4" stroke-width="1.5" />
+                    <circle cx="25" cy="30" r="2" fill="#00ffd4" />
+                    <circle cx="14" cy="30" r="1.5" fill="#ff3366" />
+                    <circle cx="36" cy="30" r="1.5" fill="#ff3366" />
+                    <!-- Alien glyphs decorations -->
+                    <text x="25" y="8" text-anchor="middle" fill="#00ffd4" font-size="6" opacity="0.5">◈◇◈</text>
+                </svg>
+            </div>
+            <div class="ship-logo-text">
+                <span class="highlight">UFO</span> COMMAND DECK
+            </div>
+        </div>
+
+        <div class="nav-sections">
+            <button class="nav-section active" data-section="command">◈ Command Deck</button>
+            <button class="nav-section" data-section="timeline">Timeline</button>
+            <button class="nav-section" data-section="archives">Archives</button>
+            <button class="nav-section" data-section="theater">Broadcast</button>
+        </div>
+
+        <div class="nav-stats">
+            <div class="nav-stat">
+                <div class="nav-stat-label">Total Cases</div>
+                <div class="nav-stat-value" id="statTotal">38</div>
+            </div>
+            <div class="nav-stat">
+                <div class="nav-stat-label">Unexplained</div>
+                <div class="nav-stat-value alert" id="statUnexplained">28</div>
+            </div>
+            <div class="nav-stat">
+                <div class="nav-stat-label">Sources</div>
+                <div class="nav-stat-value" id="statSources">10</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open case database">
+        ☰
+    </button>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- UFO transition flyover -->
+    <div class="ufo-transition-overlay" id="ufoTransitionOverlay" aria-hidden="true">
+        <div class="transition-speed-line line-one"></div>
+        <div class="transition-speed-line line-two"></div>
+        <div class="transition-ufo ufo-one">
+            <svg viewBox="0 0 140 72" focusable="false">
+                <ellipse cx="70" cy="45" rx="58" ry="14" fill="rgba(0, 255, 212, 0.12)" stroke="currentColor"
+                    stroke-width="3" />
+                <ellipse cx="70" cy="34" rx="30" ry="19" fill="rgba(0, 255, 212, 0.08)" stroke="currentColor"
+                    stroke-width="3" />
+                <circle cx="70" cy="45" r="5" fill="currentColor" />
+                <circle cx="37" cy="45" r="4" fill="#ff3366" />
+                <circle cx="103" cy="45" r="4" fill="#ff3366" />
+                <path d="M36 58h68" stroke="rgba(255, 255, 255, 0.65)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="transition-ufo ufo-two">
+            <svg viewBox="0 0 140 72" focusable="false">
+                <ellipse cx="70" cy="45" rx="58" ry="14" fill="rgba(255, 0, 170, 0.10)" stroke="currentColor"
+                    stroke-width="3" />
+                <ellipse cx="70" cy="34" rx="30" ry="19" fill="rgba(255, 255, 255, 0.06)" stroke="currentColor"
+                    stroke-width="3" />
+                <circle cx="70" cy="45" r="5" fill="currentColor" />
+                <circle cx="40" cy="45" r="4" fill="#ffd700" />
+                <circle cx="100" cy="45" r="4" fill="#ffd700" />
+            </svg>
+        </div>
+        <div class="transition-ufo ufo-three">
+            <svg viewBox="0 0 140 72" focusable="false">
+                <ellipse cx="70" cy="45" rx="58" ry="14" fill="rgba(255, 215, 0, 0.10)" stroke="currentColor"
+                    stroke-width="3" />
+                <ellipse cx="70" cy="34" rx="30" ry="19" fill="rgba(0, 255, 212, 0.07)" stroke="currentColor"
+                    stroke-width="3" />
+                <circle cx="70" cy="45" r="5" fill="currentColor" />
+                <circle cx="38" cy="45" r="4" fill="#00ffd4" />
+                <circle cx="102" cy="45" r="4" fill="#00ffd4" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- Command Deck Section -->
+    <main class="command-deck deck-section active" id="section-command">
+        <!-- Case Database Sidebar -->
+        <aside class="case-database alien-panel">
+            <div class="database-header">
+                <div class="database-title">Encounter Database</div>
+                <div class="search-box">
+                    <span class="search-icon">⌕</span>
+                    <input type="text" class="search-input" id="searchInput"
+                        placeholder="Search cases, locations, dates...">
+                </div>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="bluebook">Blue Book</button>
+                <button class="filter-chip" data-filter="aatip">AATIP</button>
+                <button class="filter-chip" data-filter="nuforc">NUFORC</button>
+                <button class="filter-chip" data-filter="wikipedia">Wikipedia</button>
+                <button class="filter-chip" data-filter="mufon">MUFON</button>
+                <button class="filter-chip danger" data-filter="unexplained">Unexplained</button>
+            </div>
+
+            <div class="case-list" id="caseList">
+                <!-- Populated by JavaScript -->
+            </div>
+
+        </aside>
+
+        <!-- Holographic Globe -->
+        <div class="globe-viewport">
+            <canvas id="globeCanvas" class="globe-canvas"></canvas>
+
+            <!-- Overlays -->
+            <div class="globe-overlay-top"></div>
+            <div class="globe-overlay-bottom"></div>
+
+
+
+
+
+            <!-- Marker Color Key (Centered Infographic) -->
+            <div class="marker-key" id="globeLegend">
+                <div class="marker-key-title">◈ ENCOUNTER CLASSIFICATION</div>
+                <div class="marker-key-items">
+                    <div class="key-item">
+                        <span class="tier-dot historical"></span>
+                        <span>HISTORICAL</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="tier-dot t3"></span>
+                        <span>CE-1</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="tier-dot t2"></span>
+                        <span>CE-2</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="tier-dot t1"></span>
+                        <span>CE-3</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="tier-dot selected"></span>
+                        <span>TARGET</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Sources -->
+            <div class="data-sources alien-panel">
+                <div class="data-sources-title">◈ Active Sources</div>
+                <div class="source-item">
+                    <span class="source-name">Project Blue Book</span>
+                    <span class="source-count">12,618</span>
+                </div>
+                <div class="source-item">
+                    <span class="source-name">NUFORC</span>
+                    <span class="source-count">170,000+</span>
+                </div>
+                <div class="source-item">
+                    <span class="source-name">MUFON</span>
+                    <span class="source-count">120,000+</span>
+                </div>
+                <div class="source-item">
+                    <span class="source-name">Black Vault</span>
+                    <span class="source-count">3.8M pages</span>
+                </div>
+                <div class="source-item">
+                    <span class="source-name">AARO/AATIP</span>
+                    <span class="source-count">Active</span>
+                </div>
+            </div>
+
+            <!-- Investigation Progress -->
+            <div class="investigation-panel alien-panel">
+                <div class="investigation-title">
+                    ◈ Investigation
+                    <button class="achievements-btn alien-btn-icon" id="achievementsBtn" title="View Achievements">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6" />
+                            <circle cx="12" cy="8" r="7" />
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="investigation-rank" id="investigationRank">RECRUIT</div>
+                <div class="investigation-progress">
+                    <div class="investigation-bar" id="investigationBar"></div>
+                </div>
+                <div class="investigation-stats" id="investigationStats">
+                    <div class="inv-stat">
+                        <span class="inv-stat-label">Rank:</span>
+                        <span class="inv-stat-value" id="statRank">Recruit</span>
+                    </div>
+                    <div class="inv-stat">
+                        <span class="inv-stat-label">Cases:</span>
+                        <span class="inv-stat-value" id="statCases">0</span>
+                    </div>
+                    <div class="inv-stat">
+                        <span class="inv-stat-label">Points:</span>
+                        <span class="inv-stat-value" id="statPoints">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Globe Controls -->
+            <div class="globe-controls alien-panel">
+                <button class="globe-control-btn alien-btn-icon" id="btnZoomIn" title="Zoom In">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <line x1="11" y1="8" x2="11" y2="14" />
+                        <line x1="8" y1="11" x2="14" y2="11" />
+                    </svg>
+                </button>
+                <button class="globe-control-btn alien-btn-icon" id="btnZoomOut" title="Zoom Out">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        <line x1="8" y1="11" x2="14" y2="11" />
+                    </svg>
+                </button>
+                <button class="globe-control-btn alien-btn-icon active" id="btnRotate" title="Auto Rotate">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12a9 9 0 11-6.219-8.56" />
+                        <polyline points="21 3 21 9 15 9" />
+                    </svg>
+                </button>
+                <button class="globe-control-btn alien-btn-icon" id="btnReset" title="Reset View">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                    </svg>
+                </button>
+                <!-- Command Deck Footer (Advanced Filters) -->
+                <div class="command-deck-footer">
+
+                    <!-- Credibility Radar -->
+                    <div class="footer-control-group">
+                        <div class="footer-label">Credibility Filter</div>
+                        <div class="credibility-gauge">
+                            <div class="radar-circle low" id="filterCredLow"></div>
+                            <input type="range" min="0" max="100" value="0" id="credibilitySlider"
+                                class="cred-slider-input" aria-label="Filter by credibility score">
+                        </div>
+                    </div>
+
+
+
+                    <!-- Shape Matrix -->
+                    <div class="footer-control-group">
+                        <div class="footer-label">Shape Analysis</div>
+                        <div class="shape-matrix" id="shapeFilterMatrix">
+                            <button class="shape-btn" data-shape="disc" title="Disc">◎</button>
+                            <button class="shape-btn" data-shape="triangle" title="Triangle">▲</button>
+                            <button class="shape-btn" data-shape="cigar" title="Cylinder">⬠</button>
+                            <button class="shape-btn" data-shape="light" title="Light / Orb">●</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Timeline Section (Placeholder) -->
+    <section class="deck-section" id="section-timeline">
+        <div id="timeline-container" class="timeline-viewport"></div>
+        <div class="timeline-controls">
+            <div class="timeline-year-display" id="timelineYearDisplay">1947</div>
+            <div class="timeline-scrubber">
+                <input type="range" id="timelineSlider" min="1940" max="2030" value="1947" step="1"
+                    title="Timeline Year Slider" aria-label="Navigate through UFO case timeline by year">
+            </div>
+            <div class="era-label" id="timelineEraLabel">THE GOLDEN AGE</div>
+        </div>
+        <div class="timeline-overlay-vignette"></div>
+    </section>
+
+    <!-- Archives Section -->
+    <!-- Archives Section -->
+    <section class="deck-section" id="section-archives">
+        <!-- 3D Hallway Container -->
+        <div class="archives-hallway-container" id="archivesHallway">
+            <div class="hallway-scene">
+                <div class="hallway-ceiling">
+                    <div class="ceiling-light"></div>
+                    <div class="ceiling-light"></div>
+                    <div class="ceiling-light"></div>
+                </div>
+                <div class="hallway-floor"></div>
+                <div class="hallway-walls">
+                    <!-- Doors are positioned absolutely in 3D space -->
+
+                    <!-- Left Side Doors -->
+                    <div class="door-container door-left-1" data-door="collections">
+                        <div class="door-label">Collections</div>
+                        <div class="door-frame">
+                            <div class="door-panel">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="door-container door-left-2" data-door="sketch">
+                        <div class="door-label">Witness Sketches</div>
+                        <div class="door-frame">
+                            <div class="door-panel">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="door-container door-left-3" data-door="news">
+                        <div class="door-label">News Clippings</div>
+                        <div class="door-frame">
+                            <div class="door-panel">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side Doors -->
+                    <div class="door-container door-right-1" data-door="maps">
+                        <div class="door-label">UFO Report Maps</div>
+                        <div class="door-frame">
+                            <div class="door-panel">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="door-container door-right-2" data-door="marrs">
+                        <div class="door-label">M.A.R.R.S Repository</div>
+                        <div class="door-frame">
+                            <div class="door-panel">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="door-container door-right-3" data-door="journals">
+                        <div class="door-label">Historic Journals</div>
+                        <div class="door-frame">
+                            <div class="door-panel">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Door -->
+                    <div class="door-container door-center" data-door="symposium">
+                        <div class="door-label">Symposium Proceedings</div>
+                        <div class="door-frame">
+                            <div class="door-panel">
+                                <div class="door-handle"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modern Grid Container (Initially Hidden) -->
+        <div class="archives-modern-container archive-grid-view" id="archivesGrid">
+            <button class="back-to-corridor-btn" id="btnBackToCorridor" type="button">
+                <span class="material-symbols-outlined" aria-hidden="true">keyboard_return</span>
+                <span>Corridor</span>
+            </button>
+
+            <!-- Header -->
+            <div class="archives-modern-header">
+                <div class="archives-title">
+                    <h1 class="alien-glyph" id="gridTitle">CLASSIFIED ARCHIVES</h1>
+                    <p class="archives-subtitle" id="archiveSubtitle">Document Repository - Restricted Access</p>
+                </div>
+
+                <!-- Search & Filter -->
+                <div class="archives-controls">
+                    <input type="search" id="archiveSearch" class="archive-search" placeholder="Search documents...">
+                    <select id="archiveFilter" class="archive-filter" aria-label="Filter documents by source">
+                        <option value="all">All Sources</option>
+                        <option value="bluebook">Project Blue Book</option>
+                        <option value="aatip">AATIP/AARO</option>
+                        <option value="blackvault">Black Vault</option>
+                        <option value="mufon">MUFON</option>
+                        <option value="geipan">GEIPAN</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Source Cards Grid -->
+            <div class="source-cards-grid" id="sourceCardsGrid">
+                <!-- Cards populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Document Viewer Modal -->
+        <div class="document-modal" id="documentModal">
+            <div class="modal-overlay"></div>
+            <div class="modal-container">
+                <button class="modal-close" id="modalClose">✕</button>
+
+                <div class="modal-content">
+                    <!-- Left: Document List -->
+                    <div class="document-list-panel">
+                        <div class="panel-header">
+                            <h3 id="modalSourceTitle">Documents</h3>
+                            <span id="docCount" class="doc-count"></span>
+                        </div>
+                        <div class="document-list" id="documentList">
+                            <!-- Document items -->
+                        </div>
+                    </div>
+
+                    <!-- Right: Document Details -->
+                    <div class="document-details-panel" id="documentDetails">
+                        <div class="no-selection">
+                            <div class="icon">📄</div>
+                            <p>Select a document to view details</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theater Mode Section -->
+    <section class="deck-section theater-mode" id="section-theater" aria-label="The Midnight Broadcast">
+        <div class="theater-sky" aria-hidden="true"></div>
+        <div class="theater-static" aria-hidden="true"></div>
+        <div class="theater-horizon" aria-hidden="true"></div>
+        <div class="theater-stage">
+            <header class="theater-header">
+                <div>
+                    <div class="theater-frequency">AM 1090 KHz</div>
+                    <h1>The Midnight Broadcast</h1>
+                </div>
+                <div class="theater-meter" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <button class="theater-exit" id="theaterExitBtn" type="button">Exit Theater</button>
+            </header>
+            <div class="theater-console">
+                <aside class="theater-log" id="theaterLog" aria-label="Transmission log"></aside>
+                <main class="theater-segment" id="theaterSegment" tabindex="-1">
+                    <div class="segment-kicker">Signal standby</div>
+                    <h2>Awaiting Transmission</h2>
+                    <p>Start the broadcast to open tonight's high desert signal.</p>
+                </main>
+            </div>
+            <footer class="theater-controls">
+                <button id="theaterStartBtn" type="button">Start Show</button>
+                <button id="theaterNextBtn" type="button">Next Segment</button>
+                <button id="theaterPauseBtn" type="button">Pause Signal</button>
+            </footer>
+        </div>
+    </section>
+
+
+    <!-- Detail Panel -->
+    <div class="detail-panel" id="detailPanel">
+        <div class="detail-header">
+            <button class="detail-close" id="detailClose">✕</button>
+            <div class="detail-classification" id="detailClassification">DECLASSIFIED</div>
+            <h2 class="detail-title" id="detailTitle">Case Name</h2>
+            <div class="detail-coords" id="detailCoords">0.0000°N, 0.0000°W</div>
+        </div>
+        <div class="detail-content">
+            <div class="detail-section">
+                <div class="detail-section-title">◈ Incident Summary</div>
+                <p class="detail-text" id="detailSummary">Loading...</p>
+            </div>
+
+            <div class="detail-section">
+                <div class="detail-section-title">◈ Classification Data</div>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <div class="detail-item-label">Date</div>
+                        <div class="detail-item-value" id="detailDate">--</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-item-label">Shape</div>
+                        <div class="detail-item-value" id="detailShape">--</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-item-label">Duration</div>
+                        <div class="detail-item-value" id="detailDuration">--</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-item-label">Witnesses</div>
+                        <div class="detail-item-value" id="detailWitnesses">--</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-item-label">Status</div>
+                        <div class="detail-item-value" id="detailStatus">--</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-item-label">Source</div>
+                        <div class="detail-item-value" id="detailSource">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <div class="detail-section-title">◈ Classified Archives</div>
+                <div id="detailResources" class="resource-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <div class="detail-section-title">◈ Investigation Actions</div>
+                <button class="alien-btn primary-action">
+                    Add to Investigation
+                </button>
+                <button class="alien-btn secondary-action">
+                    Cross-Reference Cases
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Globe Tooltip -->
+    <div class="globe-tooltip" id="globeTooltip"></div>
+
+    <!-- Achievement Notification Toast -->
+    <div class="achievement-toast" id="achievementToast">
+        <div class="achievement-toast-icon" id="toastIcon">🏆</div>
+        <div class="achievement-toast-content">
+            <div class="achievement-toast-title">Achievement Unlocked!</div>
+            <div class="achievement-toast-name" id="toastName">Achievement Name</div>
+            <div class="achievement-toast-desc" id="toastDesc">Achievement description goes here</div>
+            <div class="achievement-toast-points" id="toastPoints">+10 Points</div>
+        </div>
+    </div>
+
+    <!-- Research Report Modal -->
+    <div class="research-report-modal" id="researchReportModal">
+        <div class="research-report-content">
+            <div class="research-report-header">
+                <div>
+                    <h2>◈ RESEARCH REPORT</h2>
+                    <div class="research-case-name" id="researchCaseName">Case Name</div>
+                </div>
+                <button class="detail-close" id="researchClose">✕</button>
+            </div>
+
+            <div class="research-report-body">
+                <!-- Tactical Analysis -->
+                <div class="research-section">
+                    <h3 class="research-section-title">◉ TACTICAL ANALYSIS</h3>
+                    <div class="analysis-content" id="researchAnalysis">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Official Databases Section -->
+                <div class="research-section">
+                    <h3 class="research-section-title">◉ OFFICIAL DATABASES</h3>
+                    <div class="research-grid" id="researchOfficialGrid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Media & Research Section -->
+                <div class="research-section">
+                    <h3 class="research-section-title">◉ MEDIA & DOCUMENTATION</h3>
+                    <div class="research-grid" id="researchMediaGrid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- General Research Section -->
+                <div class="research-section">
+                    <h3 class="research-section-title">◉ GENERAL RESEARCH</h3>
+                    <div class="research-grid" id="researchGeneralGrid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Gallery Modal -->
+    <div class="achievement-gallery-modal" id="achievementGallery">
+        <div class="achievement-gallery-content">
+            <div class="achievement-gallery-header">
+                <h2>◈ ACHIEVEMENT GALLERY</h2>
+                <button class="detail-close" id="galleryClose">✕</button>
+            </div>
+            <div class="achievement-gallery-stats">
+                <div class="gallery-stat">
+                    <span class="gallery-stat-value" id="galleryUnlocked">0</span>
+                    <span class="gallery-stat-label">Unlocked</span>
+                </div>
+                <div class="gallery-stat">
+                    <span class="gallery-stat-value" id="galleryTotal">14</span>
+                    <span class="gallery-stat-label">Total</span>
+                </div>
+                <div class="gallery-stat">
+                    <span class="gallery-stat-value" id="galleryProgress">0%</span>
+                    <span class="gallery-stat-label">Complete</span>
+                </div>
+            </div>
+            <div class="achievement-categories" id="achievementCategories">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Signal Jukebox -->
+    <aside class="jukebox-panel" id="jukeboxPanel" aria-hidden="true" aria-labelledby="jukeboxTitle">
+        <div class="jukebox-cabinet">
+            <div class="jukebox-header">
+                <div>
+                    <p class="jukebox-kicker">Signal Jukebox</p>
+                    <h2 id="jukeboxTitle">Background Records</h2>
+                </div>
+                <button class="jukebox-close" id="jukeboxClose" type="button" aria-label="Close jukebox">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="jukebox-window" aria-hidden="true">
+                <div class="jukebox-arch"></div>
+                <div class="jukebox-platter">
+                    <div class="jukebox-record" id="jukeboxRecord">
+                        <span class="record-ring outer"></span>
+                        <span class="record-ring inner"></span>
+                        <span class="record-label" id="jukeboxRecordLabel">FRQ-01</span>
+                    </div>
+                    <div class="jukebox-tonearm"></div>
+                </div>
+            </div>
+            <div class="jukebox-now">
+                <span>Now Spinning</span>
+                <strong id="jukeboxNowTitle">Frequencies from the In-Between</strong>
+                <small id="jukeboxNowArtist">DJ Crisco</small>
+                <div class="jukebox-progress"><span id="jukeboxProgress"></span></div>
+            </div>
+            <div class="jukebox-transport" aria-label="Jukebox transport controls">
+                <button type="button" id="jukeboxPrev" aria-label="Previous track" title="Previous track">
+                    <span class="material-symbols-outlined" aria-hidden="true">skip_previous</span>
+                </button>
+                <button type="button" id="jukeboxNext" aria-label="Next track" title="Next track">
+                    <span class="material-symbols-outlined" aria-hidden="true">skip_next</span>
+                </button>
+            </div>
+            <div class="jukebox-track-list" id="jukeboxTrackList" role="listbox" aria-label="Background music playlist"></div>
+        </div>
+    </aside>
+    <button class="jukebox-toggle" id="jukeboxToggle" type="button" aria-controls="jukeboxPanel" aria-expanded="false" aria-label="Open jukebox" title="Open jukebox">
+        <span class="material-symbols-outlined" aria-hidden="true">queue_music</span>
+    </button>
+
+    <!-- Audio Toggle -->
+    <div class="audio-visualizer" id="audioVisualizer" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <button class="audio-toggle alien-btn-icon" id="audioToggle" title="Toggle Audio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path id="speakerIcon" d="M11 5L6 9H2v6h4l5 4V5z" />
+            <path id="soundWaves" d="M19.07 4.93L15.54 8.46a5 5 0 0 0 0 7.07l3.53 3.53" stroke-linecap="round" />
+            <line id="muteLine" x1="1" y1="1" x2="23" y2="23" stroke="red" stroke-width="2" style="display: none;" />
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        window.UFO_AMBIENT_TRACKS = [
+            {
+                title: 'Frequencies from the In-Between',
+                artist: 'DJ Crisco',
+                code: 'FRQ-01',
+                src: 'assets/background-music.mp3',
+                accent: '#4de082'
+            },
+            {
+                title: 'Swamp Gas and Starlight',
+                artist: 'DJ Crisco',
+                code: 'SGS-02',
+                src: 'assets/swamp-gas-and-starlight.mp3',
+                accent: '#ffcf5c'
+            },
+            {
+                title: 'Open Lines At 2 A.M. (Remastered)',
+                artist: 'DJ Crisco',
+                code: 'OLA-03',
+                src: 'assets/open-lines-at-2am-remastered.mp3',
+                accent: '#ff4da6'
+            },
+            {
+                title: 'Unmarked Flights',
+                artist: 'DJ Crisco',
+                code: 'UMF-04',
+                src: 'assets/unmarked-flights.mp3',
+                accent: '#00ffd4'
+            }
+        ];
+        window.UFO_AMBIENT_PLAYLIST = window.UFO_AMBIENT_TRACKS.map((track) => track.src);
+    </script>
+    <script src="js/audio.js?v=jukebox-direct-audio-20260628"></script>
+
+    <!-- Data Sources -->
+    <script src="js/data.js?v=travis-youtube-20260628"></script>
+    <script src="data/nuforc_cases.js"></script>
+    <script src="data/wikipedia_cases.js"></script>
+    <script src="data/archive_documents.js"></script>
+    <script src="data/current_news.js"></script>
+    <script src="data/youtube_resources.js?v=free-video-fallbacks-20260731"></script>
+    <script src="data/newspaper_resources.js?v=press-clippings-batch32-20260629"></script>
+
+    <!-- Logic -->
+    <script src="js/data-loader.js?v=case-resources-20260628"></script>
+    <script src="js/search.js"></script>
+    <script src="js/dossier.js?v=free-video-fallbacks-20260731"></script>
+    <script src="js/globe.js?v=mobile-globe-tap-20260731"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/archives.js?v=archive-vault-redesign-20260725"></script>
+    <script src="js/theater-mode.js?v=segment-queue-20260714"></script>
+    <script src="js/lab.js"></script>
+    <script src="js/investigation.js"></script>
+    <script src="js/app.js?v=right-menu-trim-20260731"></script>
+</body>
+
+</html>
