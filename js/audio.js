@@ -1427,6 +1427,27 @@ class AlienAudioSystem {
         }
     }
 
+    duckForVideo(level = 0.12) {
+        this.videoDuckLevel = Math.max(0, Math.min(1, level));
+        if (this.ambientGain) {
+            this.ambientGain.gain.value = this.settings.ambientVolume * this.videoDuckLevel;
+        }
+        if (this.mediaAmbientElement) {
+            this.mediaAmbientElement.volume = this.getMediaAmbientVolume() * this.videoDuckLevel;
+        }
+    }
+
+    restoreAfterVideo() {
+        if (this.videoDuckLevel === undefined) return;
+        this.videoDuckLevel = undefined;
+        if (this.ambientGain) {
+            this.ambientGain.gain.value = this.settings.ambientVolume;
+        }
+        if (this.mediaAmbientElement) {
+            this.mediaAmbientElement.volume = this.getMediaAmbientVolume();
+        }
+    }
+
     mute() {
         if (this.masterGain) {
             this.masterGain.gain.value = 0;

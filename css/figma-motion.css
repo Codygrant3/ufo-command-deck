@@ -235,7 +235,7 @@
 
 /* 5. YouTube briefing video boot-up */
 .briefing-video-card:not(.hidden)::before {
-    content: 'SIGNAL FOUND';
+    content: none;
     position: absolute;
     top: 18px;
     right: 18px;
@@ -249,7 +249,7 @@
     animation: signalFound 1800ms steps(2, end) 180ms both;
 }
 
-.briefing-video-frame:not(.hidden),
+.briefing-video-stage:not(.hidden),
 .briefing-video-fallback:not(.hidden) {
     animation: videoBoot 900ms var(--motion-snap) both;
 }

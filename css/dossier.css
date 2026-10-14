@@ -1391,3 +1391,574 @@ button.evidence-card {
         font-size: 11px;
     }
 }
+
+/* ============================================
+   CASE BRIEF + VERIFIED BRIEFING VIDEO
+   ============================================ */
+
+.dossier-shell {
+    --brief-accent: #6dfe9c;
+    --brief-cyan: #5ce1e6;
+    --brief-amber: #ffd05c;
+    --brief-ink: #e8ecef;
+    --brief-muted: #9aa3ab;
+    --brief-line: rgba(255, 255, 255, 0.12);
+    width: min(100vw, 900px);
+}
+
+.dossier-app-identity {
+    min-width: 0;
+}
+
+.dossier-app-title {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dossier-hero {
+    position: relative;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--brief-line);
+}
+
+.dossier-hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brief-accent), transparent);
+    box-shadow: 0 0 12px rgba(109, 254, 156, 0.5);
+}
+
+.dossier-title {
+    font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+}
+
+.dossier-briefing-grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.dossier-briefing-grid > .briefing-card {
+    margin-bottom: 0;
+}
+
+.case-brief-card {
+    padding: 22px 24px 20px;
+    background:
+        linear-gradient(180deg, rgba(109, 254, 156, 0.05), transparent 120px),
+        rgba(11, 16, 27, 0.7);
+    border-color: rgba(109, 254, 156, 0.22);
+}
+
+.case-brief-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.case-brief-heading .briefing-heading {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.case-brief-status,
+.video-match-badge {
+    flex: 0 1 auto;
+    min-width: 0;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 208, 92, 0.42);
+    border-radius: 999px;
+    background: rgba(255, 208, 92, 0.08);
+    color: var(--brief-amber);
+    font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.case-brief-summary {
+    margin: 0 0 18px;
+    color: var(--brief-ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 68ch;
+}
+
+.case-brief-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--brief-line);
+    border-radius: 8px;
+    background: var(--brief-line);
+}
+
+.case-brief-fact {
+    min-width: 0;
+    padding: 12px 14px;
+    background: rgba(6, 10, 16, 0.92);
+}
+
+.case-brief-fact dt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    color: var(--brief-muted);
+    font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.case-brief-fact dt .material-symbols-outlined {
+    color: var(--brief-cyan);
+    font-size: 15px;
+}
+
+.case-brief-fact dd {
+    margin: 0;
+    color: var(--brief-ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.case-brief-note {
+    margin: 14px 0 0;
+    padding: 10px 12px;
+    border-left: 2px solid var(--brief-amber);
+    border-radius: 0 6px 6px 0;
+    background: rgba(255, 208, 92, 0.06);
+    color: #d9cfae;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.case-brief-sources {
+    margin-top: 16px;
+}
+
+.case-brief-sources:empty {
+    display: none;
+}
+
+.case-brief-sources-label {
+    margin: 0 0 8px;
+    color: var(--brief-muted);
+    font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.case-brief-source-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.case-brief-source-link {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 2px;
+    align-items: center;
+    height: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--brief-line);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--brief-ink);
+    text-decoration: none;
+    transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.case-brief-source-link .material-symbols-outlined {
+    grid-row: 1 / span 2;
+    color: var(--brief-accent);
+    font-size: 20px;
+}
+
+.case-brief-source-link.program .material-symbols-outlined {
+    color: var(--brief-amber);
+}
+
+.case-brief-source-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.case-brief-source-meta {
+    color: var(--brief-muted);
+    font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.case-brief-source-link:hover,
+.case-brief-source-link:focus-visible {
+    border-color: rgba(109, 254, 156, 0.5);
+    background: rgba(109, 254, 156, 0.06);
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.briefing-video-card {
+    padding: 18px 18px 16px;
+    border-color: rgba(92, 225, 230, 0.22);
+}
+
+.briefing-video-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.briefing-video-header .briefing-heading {
+    margin: 0;
+}
+
+.video-match-badge {
+    border-color: rgba(109, 254, 156, 0.42);
+    background: rgba(109, 254, 156, 0.08);
+    color: var(--brief-accent);
+}
+
+.video-match-badge.context {
+    border-color: rgba(255, 208, 92, 0.42);
+    background: rgba(255, 208, 92, 0.08);
+    color: var(--brief-amber);
+}
+
+.briefing-video-stage {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid rgba(92, 225, 230, 0.26);
+    border-radius: 8px;
+    background: #030507;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), inset 0 0 0 1px rgba(0, 0, 0, 0.6);
+}
+
+.briefing-video-stage .briefing-video-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    border: 0;
+    border-radius: 0;
+}
+
+.briefing-video-facade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: #030507;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.briefing-video-facade::before,
+.briefing-video-facade::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.briefing-video-facade::before {
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(2, 4, 8, 0.15) 30%, rgba(2, 4, 8, 0.82) 100%),
+        radial-gradient(ellipse at center, transparent 45%, rgba(2, 4, 8, 0.55) 100%);
+}
+
+.briefing-video-facade::after {
+    z-index: 1;
+    opacity: 0.35;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0 1px, transparent 1px 3px);
+    mix-blend-mode: multiply;
+}
+
+.briefing-video-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.82) contrast(1.05);
+    transform: scale(1.01);
+    transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 300ms ease;
+}
+
+.briefing-video-play {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(109, 254, 156, 0.75);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(109, 254, 156, 0.28), rgba(2, 4, 8, 0.72) 70%);
+    box-shadow: 0 0 0 8px rgba(109, 254, 156, 0.08), 0 0 32px rgba(109, 254, 156, 0.45);
+    color: #eafff1;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.briefing-video-play::after {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    border: 1px dashed rgba(109, 254, 156, 0.35);
+    border-radius: 50%;
+    animation: videoRingSpin 14s linear infinite;
+}
+
+.briefing-video-play .material-symbols-outlined {
+    font-size: 40px;
+    font-variation-settings: 'FILL' 1;
+}
+
+.briefing-video-hud {
+    position: absolute;
+    z-index: 2;
+    left: 14px;
+    bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #cfe9d9;
+    font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.video-hud-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff4d6d;
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.85);
+    animation: videoHudBlink 1.6s steps(2, end) infinite;
+}
+
+.briefing-video-facade:hover .briefing-video-thumb,
+.briefing-video-facade:focus-visible .briefing-video-thumb {
+    transform: scale(1.04);
+    filter: saturate(1) contrast(1.08);
+}
+
+.briefing-video-facade:hover .briefing-video-play,
+.briefing-video-facade:focus-visible .briefing-video-play {
+    transform: translate(-50%, -50%) scale(1.06);
+    box-shadow: 0 0 0 10px rgba(109, 254, 156, 0.12), 0 0 44px rgba(109, 254, 156, 0.65);
+}
+
+.briefing-video-facade:focus-visible {
+    outline: 2px solid var(--brief-accent);
+    outline-offset: -2px;
+}
+
+.briefing-video-meta {
+    margin-top: 12px;
+}
+
+.briefing-video-title {
+    margin: 0;
+    color: var(--brief-ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.briefing-video-channel {
+    margin: 4px 0 0;
+    color: var(--brief-muted);
+    font-family: 'JetBrains Mono', 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+}
+
+.briefing-video-actions {
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.briefing-video-actions:not(.hidden) {
+    display: flex;
+}
+
+.briefing-video-privacy {
+    margin: 0;
+    color: var(--brief-muted);
+    font-size: 11.5px;
+    line-height: 1.5;
+}
+
+.briefing-video-actions .video-watch-action {
+    flex: 0 0 auto;
+    width: auto;
+    padding-inline: 16px;
+}
+
+.dossier-tab {
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.dossier-tabs {
+    scrollbar-width: none;
+}
+
+.dossier-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.hidden.briefing-video-stage,
+.hidden.briefing-video-meta,
+.hidden.briefing-video-actions,
+.hidden.briefing-video-facade,
+.hidden.briefing-video-frame,
+.hidden.case-brief-note {
+    display: none;
+}
+
+@keyframes videoRingSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes videoHudBlink {
+    50% {
+        opacity: 0.25;
+    }
+}
+
+@media (min-width: 1180px) {
+    .dossier-briefing-grid {
+        grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .case-brief-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .case-brief-source-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 820px) {
+    .dossier-actions {
+        gap: 8px;
+    }
+
+    .dossier-action-button {
+        padding: 0 10px;
+    }
+
+    .case-brief-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .dossier-app-identity .material-symbols-outlined {
+        font-size: 26px;
+    }
+
+    .dossier-app-title {
+        display: none;
+    }
+
+    .dossier-action-button {
+        min-height: 36px;
+        padding: 0 9px;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+    }
+
+    .case-brief-card,
+    .briefing-video-card {
+        padding: 16px 14px;
+    }
+
+    .case-brief-heading,
+    .briefing-video-header {
+        flex-wrap: wrap;
+    }
+
+    .case-brief-summary {
+        font-size: 15.5px;
+    }
+
+    .case-brief-source-list {
+        grid-template-columns: 1fr;
+    }
+
+    .briefing-video-play {
+        width: 62px;
+        height: 62px;
+    }
+
+    .briefing-video-actions:not(.hidden) {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .briefing-video-actions .video-watch-action {
+        width: 100%;
+        max-width: none;
+    }
+}
