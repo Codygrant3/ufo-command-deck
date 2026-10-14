@@ -2115,6 +2115,7 @@ ${news.length ? news.map((item) => `<div class="card"><strong>${escape(item.titl
         window.setTimeout(() => {
             if (!document.body.classList.contains('dossier-open')) {
                 this.toggleUtilityPanel('guidePanel');
+                window.localStorage?.setItem(this.guideStorageKey, 'true');
             }
         }, 900);
     }
@@ -2133,11 +2134,12 @@ ${news.length ? news.map((item) => `<div class="card"><strong>${escape(item.titl
         ].forEach(([number, title, copy]) => {
             const step = document.createElement('div');
             step.className = 'guide-step-card';
-            step.append(
-                this.createTextNodeElement('span', `STEP ${number}`),
-                this.createTextNodeElement('strong', title),
-                this.createTextNodeElement('p', copy)
-            );
+            const stepNumber = this.createTextNodeElement('span', number);
+            stepNumber.className = 'guide-step-number';
+            stepNumber.setAttribute('aria-label', `Step ${number}`);
+            const stepText = document.createElement('div');
+            stepText.append(this.createTextNodeElement('strong', title), this.createTextNodeElement('p', copy));
+            step.append(stepNumber, stepText);
             body.append(step);
         });
 
@@ -3278,6 +3280,9 @@ ${news.length ? news.map((item) => `<div class="card"><strong>${escape(item.titl
     createCaseCard(caseData) {
         const card = document.createElement('div');
         card.className = `case-card tier-${this.sanitizeClassToken(caseData.tier || 'unknown')}`;
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Open case file: ${caseData.name || 'Unknown case'}`);
 
         const sourceClass = this.sanitizeClassToken(caseData.source || 'source');
 
@@ -3289,7 +3294,7 @@ ${news.length ? news.map((item) => `<div class="card"><strong>${escape(item.titl
         name.textContent = caseData.name || 'Unknown Case';
         const date = document.createElement('div');
         date.className = 'case-date';
-        date.textContent = caseData.date || 'Date unknown';
+        date.textContent = window.CaseContext ? CaseContext.formatCaseDate(caseData) : (caseData.date || 'Date unknown');
         titleGroup.append(name, date);
 
         const source = document.createElement('span');
@@ -3308,9 +3313,24 @@ ${news.length ? news.map((item) => `<div class="card"><strong>${escape(item.titl
             this.createCaseMetaItem('◎', String(caseData.location || 'Unknown location').split(',')[0])
         );
 
+        const video = window.CaseContext?.getVerifiedVideos(caseData)[0];
+        if (video) {
+            const badge = document.createElement('span');
+            badge.className = `case-video-badge${video.match === 'context' ? ' context' : ''}`;
+            badge.textContent = video.match === 'context' ? '▶ Context video' : '▶ Case video';
+            meta.append(badge);
+        }
+
         card.append(header, summary, meta);
 
         card.addEventListener('click', () => {
+            alienAudio.playClick();
+            this.openBroadcastDossierFromCase(caseData);
+        });
+
+        card.addEventListener('keydown', (event) => {
+            if (event.target !== card || (event.key !== 'Enter' && event.key !== ' ')) return;
+            event.preventDefault();
             alienAudio.playClick();
             this.openBroadcastDossierFromCase(caseData);
         });

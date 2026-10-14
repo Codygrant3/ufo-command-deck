@@ -90,24 +90,66 @@ class DossierView {
 
         hero.append(heroLeft, heroRight);
 
+        const briefCard = this.createElement('section', 'briefing-card case-brief-card', { id: 'dossierBriefCard' });
+        briefCard.setAttribute('aria-label', 'Case brief');
+        const briefHeading = this.createElement('div', 'case-brief-heading');
+        briefHeading.append(
+            this.createHeading('description', 'Case Brief'),
+            this.createElement('span', 'case-brief-status', { id: 'dossierBriefStatus' }, 'STATUS UNKNOWN')
+        );
+        briefCard.append(
+            briefHeading,
+            this.createElement('p', 'case-brief-summary', { id: 'dossierBriefSummary' }, ''),
+            this.createElement('dl', 'case-brief-facts', { id: 'dossierBriefFacts' }),
+            this.createElement('p', 'case-brief-note hidden', { id: 'dossierBriefNote' }, ''),
+            this.createElement('div', 'case-brief-sources', { id: 'dossierBriefSources' })
+        );
+
         const videoCard = this.createElement('section', 'briefing-card briefing-video-card hidden', { id: 'dossierVideoCard' });
-        const videoHeading = this.createHeading('smart_display', 'Briefing Video');
-        const videoFrame = this.createElement('iframe', 'briefing-video-frame', { id: 'dossierVideoFrame', title: 'Case briefing video' });
+        const videoHeader = this.createElement('div', 'briefing-video-header');
+        videoHeader.append(
+            this.createHeading('smart_display', 'Briefing Video'),
+            this.createElement('span', 'video-match-badge', { id: 'dossierVideoMatch' }, 'CASE FOOTAGE')
+        );
+        const videoStage = this.createElement('div', 'briefing-video-stage hidden', { id: 'dossierVideoStage' });
+        const videoFacade = this.createElement('button', 'briefing-video-facade', { id: 'dossierVideoFacade', type: 'button' });
+        const videoThumb = this.createElement('img', 'briefing-video-thumb', { id: 'dossierVideoThumb', alt: '' });
+        videoThumb.loading = 'lazy';
+        videoThumb.decoding = 'async';
+        videoThumb.referrerPolicy = 'no-referrer';
+        const playRing = this.createElement('span', 'briefing-video-play');
+        playRing.append(this.createIcon('play_arrow'));
+        const facadeHud = this.createElement('span', 'briefing-video-hud');
+        facadeHud.append(
+            this.createElement('span', 'video-hud-dot'),
+            this.createElement('span', '', { id: 'dossierVideoDuration' }, 'SIGNAL READY · PRESS TO PLAY')
+        );
+        videoFacade.append(videoThumb, playRing, facadeHud);
+        const videoFrame = this.createElement('iframe', 'briefing-video-frame hidden', { id: 'dossierVideoFrame', title: 'Case briefing video' });
         videoFrame.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; web-share');
         videoFrame.setAttribute('allowfullscreen', '');
+        videoFrame.setAttribute('loading', 'lazy');
         videoFrame.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        videoStage.append(videoFacade, videoFrame);
+
+        const videoMeta = this.createElement('div', 'briefing-video-meta hidden', { id: 'dossierVideoMeta' });
+        videoMeta.append(
+            this.createElement('p', 'briefing-video-title', { id: 'dossierVideoTitle' }, ''),
+            this.createElement('p', 'briefing-video-channel', { id: 'dossierVideoChannel' }, '')
+        );
         const videoActions = this.createElement('div', 'briefing-video-actions hidden', { id: 'dossierVideoActions' });
         videoActions.append(
+            this.createElement('p', 'briefing-video-privacy', {}, 'Privacy-enhanced embed: nothing loads from YouTube until you press play.'),
             this.createElement('button', 'briefing-action video-watch-action', { id: 'dossierVideoOpenButton', type: 'button' }, 'Watch on YouTube')
         );
         const videoFallback = this.createElement('div', 'briefing-video-fallback hidden', { id: 'dossierVideoFallback' });
         videoFallback.append(
             this.createIcon('youtube_searched_for'),
-            this.createElement('p', 'video-fallback-title', { id: 'dossierVideoFallbackTitle' }, 'YouTube search available'),
-            this.createElement('p', 'video-fallback-copy', {}, 'This case has a YouTube search link, but not a specific embeddable video URL yet.'),
-            this.createElement('button', 'briefing-action video-search-action', { id: 'dossierVideoSearchButton', type: 'button' }, 'Open YouTube Search')
+            this.createElement('p', 'video-fallback-title', { id: 'dossierVideoFallbackTitle' }, 'No verified video on file'),
+            this.createElement('p', 'video-fallback-copy', {}, 'No verified, embeddable video is linked to this case yet.'),
+            this.createElement('button', 'briefing-action video-search-action', { id: 'dossierVideoSearchButton', type: 'button' }, 'Search YouTube')
         );
-        videoCard.append(videoHeading, videoFrame, videoActions, videoFallback);
+        videoCard.append(videoHeader, videoStage, videoMeta, videoActions, videoFallback);
 
         const pressCard = this.createElement('section', 'briefing-card briefing-press-card hidden', { id: 'dossierPressCard' });
         pressCard.append(
@@ -160,7 +202,10 @@ class DossierView {
             bottomNav.append(button);
         });
 
-        scrollArea.append(hero, pressCard, videoCard, confidenceCard, tabBar, panes);
+        const briefingGrid = this.createElement('div', 'dossier-briefing-grid');
+        briefingGrid.append(briefCard, videoCard);
+
+        scrollArea.append(hero, briefingGrid, confidenceCard, pressCard, tabBar, panes);
         shell.append(appBar, scrollArea, bottomNav);
         overlay.append(shell);
         document.body.appendChild(overlay);
@@ -186,12 +231,13 @@ class DossierView {
         this.setText('dossierTitle', this.value(caseData.name, 'Unknown Case'));
         this.setText('dossierId', `CASE-${this.value(caseData.id, '000').toUpperCase()}`);
         this.setText('dossierBroadcastLine', this.getBroadcastLine(caseData));
-        this.setText('dossierDate', this.value(caseData.date || caseData.year, 'DATE UNKNOWN'));
+        this.setText('dossierDate', CaseContext.formatCaseDate(caseData));
         this.setText('dossierLocation', this.value(caseData.location, 'LOCATION UNKNOWN'));
         const credibility = this.getCredibility(caseData);
         this.setText('dossierConfidenceNote', this.getConfidenceNote(caseData, credibility));
         this.animateCredibility(credibility);
 
+        this.populateCaseBrief(caseData);
         this.populateOnAir(caseData);
         this.populateBriefingVideo(caseData);
         this.populatePressClippings(caseData);
@@ -201,6 +247,7 @@ class DossierView {
         this.populateAnalysis(caseData);
         this.updateQueueButton();
 
+        document.getElementById('dossierScroll')?.scrollTo({ top: 0 });
         const overlay = document.getElementById('dossierOverlay');
         overlay.classList.remove('hidden');
         document.body.classList.add('dossier-open');
@@ -229,12 +276,87 @@ class DossierView {
                 ['Status', this.value(caseData.status, 'Not logged')],
                 ['Signal', this.getSignalLevel(credibility)]
             ]),
-            this.createElement('p', 'briefing-summary-text', {}, this.value(caseData.summary, 'No summary available in the dataset.')),
             this.createAnalystNote(caseData),
             this.createAudioDramaControls(caseData)
         );
 
         pane.append(stationCard);
+    }
+
+    briefFact(raw) {
+        const value = this.value(raw, '');
+        return /^(n\/?a|unknown|none)?$/i.test(value.trim()) ? 'Not recorded' : value;
+    }
+
+    populateCaseBrief(caseData) {
+        this.setText('dossierBriefStatus', this.value(caseData.status, 'Status not logged'));
+        this.setText('dossierBriefSummary', this.value(caseData.summary, 'No summary available in the dataset.'));
+
+        const facts = document.getElementById('dossierBriefFacts');
+        if (facts) {
+            facts.replaceChildren();
+            [
+                ['event', 'When', CaseContext.formatCaseDate(caseData)],
+                ['location_on', 'Where', this.value(caseData.location, 'Location not logged')],
+                ['groups', 'Witnesses', this.briefFact(caseData.witnesses)],
+                ['timer', 'Duration', this.briefFact(caseData.duration)],
+                ['category', 'Object', this.briefFact(caseData.shape)],
+                ['account_balance', 'Source', CaseContext.getSourceProgram(caseData.source).name]
+            ].forEach(([icon, label, value]) => {
+                const fact = this.createElement('div', 'case-brief-fact');
+                const term = this.createElement('dt', '');
+                term.append(this.createIcon(icon), this.createElement('span', '', {}, label));
+                fact.append(term, this.createElement('dd', '', {}, value));
+                facts.append(fact);
+            });
+        }
+
+        const note = document.getElementById('dossierBriefNote');
+        if (note) {
+            const contextNote = this.value(caseData.contextNote, '');
+            note.textContent = contextNote;
+            note.classList.toggle('hidden', !contextNote);
+        }
+
+        const sources = document.getElementById('dossierBriefSources');
+        if (!sources) return;
+        sources.replaceChildren();
+
+        const program = CaseContext.getSourceProgram(caseData.source);
+        const pressUrls = new Set(this.findPressResources(caseData).slice(0, 4).map((resource) => String(resource.url || '').toLowerCase()));
+        const links = CaseContext.getSourceLinks(caseData, 12)
+            .filter((resource) => !pressUrls.has(String(resource.url).toLowerCase()))
+            .slice(0, 4);
+        const programUrl = this.getSafeUrl(program.url);
+        if (!links.length && !programUrl) return;
+
+        sources.append(this.createElement('p', 'case-brief-sources-label', {}, 'Key sources'));
+        const list = this.createElement('ul', 'case-brief-source-list');
+        links.forEach((resource) => {
+            const url = this.getSafeUrl(resource.url);
+            if (!url) return;
+            const item = this.createElement('li', '');
+            const link = this.createElement('a', 'case-brief-source-link', { href: url, target: '_blank', rel: 'noopener noreferrer' });
+            link.append(
+                this.createIcon(this.getResourceIcon(resource)),
+                this.createElement('span', 'case-brief-source-title', {}, this.value(resource.title, 'Source file')),
+                this.createElement('span', 'case-brief-source-meta', {}, [this.formatResourceSource(resource), resource.date].filter(Boolean).join(' · '))
+            );
+            item.append(link);
+            list.append(item);
+        });
+        if (programUrl) {
+            const item = this.createElement('li', '');
+            const link = this.createElement('a', 'case-brief-source-link program', { href: programUrl, target: '_blank', rel: 'noopener noreferrer' });
+            link.append(
+                this.createIcon('account_balance'),
+                this.createElement('span', 'case-brief-source-title', {}, program.name),
+                this.createElement('span', 'case-brief-source-meta', {}, 'Originating archive')
+            );
+            item.append(link);
+            list.append(item);
+        }
+        sources.append(list);
     }
 
     populateCaseFile(caseData) {
@@ -367,17 +489,17 @@ class DossierView {
         if (!videoCard || !frame || !fallback || !searchButton) return;
 
         const resources = this.findYouTubeResources(caseData);
-        const candidates = resources.filter((resource) => !this.shouldSkipYouTubeResource(resource));
-        const firstEmbeddableIndex = candidates.findIndex((resource) => this.getYouTubeEmbedUrl(resource.url));
+        const candidates = CaseContext.getVerifiedVideos(caseData)
+            .filter((resource) => !this.shouldSkipYouTubeResource(resource));
 
-        if (firstEmbeddableIndex >= 0) {
-            this.showBriefingVideoCandidate(caseData, candidates, firstEmbeddableIndex);
+        if (candidates.length) {
+            this.showBriefingVideoCandidate(caseData, candidates, 0);
             return;
         }
 
-        const fallbackResource = candidates.find((resource) => this.getSafeUrl(resource.url)) || this.createYouTubeSearchResource(caseData);
+        const fallbackResource = this.createYouTubeSearchResource(caseData);
         if (fallbackResource) {
-            this.showBriefingVideoFallback(fallbackResource, resources.length - candidates.length);
+            this.showBriefingVideoFallback(fallbackResource, resources.length);
             return;
         }
 
@@ -1214,10 +1336,14 @@ class DossierView {
 
     clearBriefingVideo() {
         const videoCard = document.getElementById('dossierVideoCard');
+        const stage = document.getElementById('dossierVideoStage');
+        const facade = document.getElementById('dossierVideoFacade');
+        const thumb = document.getElementById('dossierVideoThumb');
         const frame = document.getElementById('dossierVideoFrame');
         const fallback = document.getElementById('dossierVideoFallback');
         const searchButton = document.getElementById('dossierVideoSearchButton');
         const actions = document.getElementById('dossierVideoActions');
+        const meta = document.getElementById('dossierVideoMeta');
         const openButton = document.getElementById('dossierVideoOpenButton');
 
         if (frame) {
@@ -1227,6 +1353,19 @@ class DossierView {
             frame.classList.add('hidden');
         }
 
+        if (thumb) {
+            thumb.onerror = null;
+            thumb.removeAttribute('src');
+        }
+
+        if (facade) {
+            facade.onclick = null;
+            facade.classList.remove('hidden');
+        }
+
+        stage?.classList.add('hidden');
+        stage?.classList.remove('playing');
+        meta?.classList.add('hidden');
         fallback?.classList.add('hidden');
         actions?.classList.add('hidden');
         videoCard?.classList.add('hidden');
@@ -1239,21 +1378,25 @@ class DossierView {
             openButton.onclick = null;
         }
 
+        window.alienAudio?.restoreAfterVideo?.();
         this.activeVideoContext = null;
     }
 
     showBriefingVideoCandidate(caseData, candidates, index) {
         const videoCard = document.getElementById('dossierVideoCard');
+        const stage = document.getElementById('dossierVideoStage');
+        const facade = document.getElementById('dossierVideoFacade');
+        const thumb = document.getElementById('dossierVideoThumb');
         const frame = document.getElementById('dossierVideoFrame');
         const fallback = document.getElementById('dossierVideoFallback');
         const actions = document.getElementById('dossierVideoActions');
+        const meta = document.getElementById('dossierVideoMeta');
         const openButton = document.getElementById('dossierVideoOpenButton');
         const resource = candidates[index];
-        const embedUrl = this.getYouTubeEmbedUrl(resource?.url);
-        const safeUrl = this.getSafeUrl(resource?.url);
         const videoId = this.getYouTubeVideoId(resource?.url);
+        const safeUrl = videoId ? `https://www.youtube.com/watch?v=${videoId}` : '';
 
-        if (!videoCard || !frame || !fallback || !resource || !embedUrl) return;
+        if (!videoCard || !stage || !facade || !thumb || !frame || !fallback || !resource || !videoId) return;
 
         this.activeVideoContext = {
             caseId: caseData?.id || '',
@@ -1262,13 +1405,41 @@ class DossierView {
             videoId
         };
 
+        const title = this.value(resource.title, 'Case briefing video');
+        const isContext = resource.match === 'context';
+        const matchBadge = document.getElementById('dossierVideoMatch');
+        this.setText('dossierVideoMatch', isContext ? 'CONTEXT' : 'CASE FOOTAGE');
+        matchBadge?.classList.toggle('context', isContext);
+        matchBadge?.setAttribute('title', isContext
+            ? 'Closest verified coverage of this topic or region, not footage of this exact incident'
+            : 'Coverage of this specific incident');
+        this.setText('dossierVideoTitle', title);
+        this.setText('dossierVideoChannel', resource.channel ? `${resource.channel} · YouTube` : 'YouTube');
+        this.setText('dossierVideoDuration', isContext
+            ? 'RELATED COVERAGE · PRESS TO PLAY'
+            : 'SIGNAL READY · PRESS TO PLAY');
+
         videoCard.classList.remove('hidden');
-        frame.classList.remove('hidden');
+        stage.classList.remove('hidden', 'playing');
+        meta?.classList.remove('hidden');
         fallback.classList.add('hidden');
-        frame.title = this.value(resource.title, 'Case briefing video');
-        frame.dataset.videoId = videoId;
-        frame.onload = () => this.registerYouTubeFrameListener(frame);
-        frame.src = embedUrl;
+        frame.removeAttribute('src');
+        frame.classList.add('hidden');
+        facade.classList.remove('hidden');
+        facade.setAttribute('aria-label', `Play video: ${title}`);
+
+        thumb.onerror = () => {
+            if (thumb.dataset.fallbackStep !== 'hq') {
+                thumb.dataset.fallbackStep = 'hq';
+                thumb.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+                return;
+            }
+            this.advanceBriefingVideo('The thumbnail for this video could not be loaded.');
+        };
+        thumb.dataset.fallbackStep = '';
+        thumb.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+
+        facade.onclick = () => this.playBriefingVideo();
 
         if (openButton && safeUrl) {
             actions?.classList.remove('hidden');
@@ -1276,29 +1447,55 @@ class DossierView {
         }
     }
 
+    playBriefingVideo() {
+        const context = this.activeVideoContext;
+        const stage = document.getElementById('dossierVideoStage');
+        const facade = document.getElementById('dossierVideoFacade');
+        const frame = document.getElementById('dossierVideoFrame');
+        const resource = context?.candidates?.[context.index];
+        const embedUrl = this.getYouTubeEmbedUrl(resource?.url);
+        if (!context || !stage || !facade || !frame || !embedUrl) return;
+
+        frame.title = this.value(resource.title, 'Case briefing video');
+        frame.dataset.videoId = context.videoId;
+        frame.onload = () => this.registerYouTubeFrameListener(frame);
+        frame.src = embedUrl;
+        frame.classList.remove('hidden');
+        facade.classList.add('hidden');
+        stage.classList.add('playing');
+        window.alienAudio?.duckForVideo?.();
+        frame.focus({ preventScroll: true });
+    }
+
     showBriefingVideoFallback(resource, skippedCount = 0) {
         const videoCard = document.getElementById('dossierVideoCard');
+        const stage = document.getElementById('dossierVideoStage');
         const frame = document.getElementById('dossierVideoFrame');
         const fallback = document.getElementById('dossierVideoFallback');
         const searchButton = document.getElementById('dossierVideoSearchButton');
         const fallbackTitle = document.getElementById('dossierVideoFallbackTitle');
         const fallbackCopy = fallback?.querySelector('.video-fallback-copy');
         const actions = document.getElementById('dossierVideoActions');
+        const meta = document.getElementById('dossierVideoMeta');
         const safeUrl = this.getSafeUrl(resource?.url);
 
         if (!videoCard || !frame || !fallback || !searchButton || !safeUrl) return;
 
         this.activeVideoContext = null;
+        this.setText('dossierVideoMatch', 'SIGNAL LOST');
+        document.getElementById('dossierVideoMatch')?.classList.add('context');
         videoCard.classList.remove('hidden');
+        stage?.classList.add('hidden');
         frame.removeAttribute('src');
         frame.classList.add('hidden');
         actions?.classList.add('hidden');
+        meta?.classList.add('hidden');
         fallback.classList.remove('hidden');
-        fallbackTitle.textContent = this.value(resource.title, 'YouTube search available');
+        fallbackTitle.textContent = this.value(resource.title, 'No verified video on file');
         if (fallbackCopy) {
             fallbackCopy.textContent = skippedCount > 0
-                ? 'Paid or restricted embeds were skipped. Open a free YouTube search result for this case.'
-                : 'This case has a YouTube search link, but not a specific embeddable video URL yet.';
+                ? 'The linked video is unavailable or cannot be embedded. You can search YouTube for coverage of this case instead.'
+                : 'No verified, embeddable video is linked to this case yet. You can search YouTube for coverage instead.';
         }
         searchButton.onclick = () => window.open(safeUrl, '_blank', 'noopener,noreferrer');
     }
@@ -1328,7 +1525,7 @@ class DossierView {
             frame.contentWindow?.postMessage(JSON.stringify({
                 event: 'listening',
                 id: frame.id
-            }), 'https://www.youtube.com');
+            }), 'https://www.youtube-nocookie.com');
         } catch (error) {
             console.warn('Unable to register YouTube frame listener:', error);
         }
@@ -1391,8 +1588,8 @@ class DossierView {
 
         return {
             type: 'youtube',
-            title: 'Free YouTube search available',
-            url: `https://www.youtube.com/results?search_query=${encodeURIComponent(`${name} UFO free documentary interview`)}`
+            title: 'No verified video on file',
+            url: `https://www.youtube.com/results?search_query=${encodeURIComponent(`${name} UFO`)}`
         };
     }
 
@@ -1411,7 +1608,6 @@ class DossierView {
 
         const params = new URLSearchParams({
             autoplay: '1',
-            mute: '1',
             playsinline: '1',
             rel: '0',
             modestbranding: '1',
@@ -1419,7 +1615,7 @@ class DossierView {
             origin: window.location.origin
         });
 
-        return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+        return `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
     }
 
     getYouTubeVideoId(url) {
